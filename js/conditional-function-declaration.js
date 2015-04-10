@@ -36,4 +36,5 @@
     }
     test(); // Error: 'undefined' is not a function
     // Error is thrown, because the variabel is hoisted, but not the function assigned to it.
+    // Warning - Named function expressions are still hoisted in < IE9 (IE bug/inconsistency).
 }());

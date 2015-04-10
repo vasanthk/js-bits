@@ -1,7 +1,7 @@
 /**
  * Conditional Function declaration
  *
- * @TLDR: Invalid in JavaScript
+ * @TLDR: Invalid in JavaScript. So, avoit it!
  *
  * @Info:
  * ECMA-262 spec: A Block is defined as one or more Statements, and a FunctionDeclaration is not a Statement.
@@ -15,21 +15,25 @@
  * ECMA-262: http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=98
  */
 
+// Case 1
 (function() {
-    var temp = 1;
-
-    if(temp) {
-        // Function decalaration inside a conditional. Illegal in JS
-        function a() {
-            temp = 2;
-            console.log(temp);
-        }
-    } else {
-        function a() {
-            temp = 3;
-            console.log(temp);
+    if (false) {
+        function test () {
+            alert("Works");
         }
     }
+    test(); // alerts "Works"... ohh boy!
+    // Output is printed in most browsers due to hoisting of functions, although it is invalid in JavaScript
+}());
 
-    a(); // Output is printed in most browsers due to hoisting. But o/p differ between browsers.
+
+// Case 2
+(function() {
+    if (false) {
+        var test = function () {
+            alert("Works");
+        }
+    }
+    test(); // Error: 'undefined' is not a function
+    // Error is thrown, because the variabel is hoisted, but not the function assigned to it.
 }());

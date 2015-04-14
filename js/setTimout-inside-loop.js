@@ -31,9 +31,19 @@
     // Note: When the IIFE is inside the setTimout, it prints the corrct values.
     // However, the values are printed immediately and not after the timout value.
     // Essentially rendering the setTimout useless.
+    // setTimout() needs a fn as it's 1st parameter.
     for (var i = 1; i <= 3; i++) {
         setTimeout((function (index) {
-            console.log(index);     // prints 1 2 3
+            console.log(index);         // prints 1 2 3
+        })(i), 1000);
+    }
+
+    // You can still use and IIFE inside setTimout(), but you need to return a function as it's first parameter.
+    for (var i = 1; i <= 3; i++) {
+        setTimeout((function (index) {
+            return function () {
+                console.log(index);     // prints 1 2 3
+            };  // IIFE needs to return a function that setTimeout can schedule.
         })(i), 1000);
     }
 

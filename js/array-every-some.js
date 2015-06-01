@@ -8,6 +8,8 @@
  * A better solution exists in the form of the lesser known every() and some() array iteration methods.
  * every iterates until the provided callback returns false, and some iterates until the provided callback returns true.
  *
+ * Both every and some have the same browser support as forEach.
+ *
  * @Reference:
  * http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
  *

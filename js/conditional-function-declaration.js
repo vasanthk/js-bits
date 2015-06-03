@@ -1,7 +1,7 @@
 /**
  * Conditional Function declaration
  *
- * @TLDR: Invalid in JavaScript. So, avoit it!
+ * @TLDR: Invalid in JavaScript. So, avoid it!
  *
  * @Info:
  * ECMA-262 spec: A Block is defined as one or more Statements, and a FunctionDeclaration is not a Statement.
@@ -35,6 +35,6 @@
         }
     }
     test(); // Error: 'undefined' is not a function
-    // Error is thrown, because the variabel is hoisted, but not the function assigned to it.
+    // Error is thrown, because the variable is hoisted, but not the function assigned to it.
     // Warning - Named function expressions are still hoisted in < IE9 (IE bug/inconsistency).
 }());

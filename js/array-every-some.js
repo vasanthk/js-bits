@@ -12,6 +12,7 @@
  *
  * @Reference:
  * http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
+ * https://coderwall.com/p/_ggh2w/the-array-native-every-filter-map-some-foreach-methods
  *
  */
 

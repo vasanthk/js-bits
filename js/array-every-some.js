@@ -39,3 +39,31 @@
     console.log('Great Composers: ' + v);
   });
 })();
+
+// every() and some() in an example
+(function () {
+  function isBigEnough(element) {
+    return element >= 10;
+  }
+
+  function isBigEnough2(element) {
+    return element >= 1;
+  }
+
+  var passed = [2, 5, 8, 1, 4].some(isBigEnough);
+  console.log('some: For [2, 5, 8, 1, 4] are the values larger or equal to 10 ? ' + passed);
+  // some: For [2, 5, 8, 1, 4] are the values larger or equal to 10 ? false
+
+  var passed = [12, 5, 8, 1, 4].some(isBigEnough);
+  console.log('some: For [12, 5, 8, 1, 4] are the values larger or equal to 10 ? ' + passed);
+  // some: For [12, 5, 8, 1, 4] are the values larger or equal to 10 ? true
+
+  var passed = [12, 5, 8, 1, 4].every(isBigEnough);
+  console.log('every: For [12, 5, 8, 1, 4] are "ALL" the values larger or equal to 10 ? ' + passed);
+  // every: For [12, 5, 8, 1, 4] are "ALL" the values larger or equal to 10 ? false
+
+  var passed = [12, 5, 8, 1, 4].every(isBigEnough2);
+  console.log('every: For [12, 5, 8, 1, 4] are "ALL" the values larger or equal to 1 ? ' + passed);
+  // every: For [12, 5, 8, 1, 4] are "ALL" the values larger or equal to 1 ? true
+
+})();

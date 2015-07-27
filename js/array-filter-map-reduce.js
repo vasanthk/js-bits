@@ -1,7 +1,9 @@
 /**
  * Array filter(), map() and reduce()
  *
- * @Reference: http://danmartensen.svbtle.com/javascripts-map-reduce-and-filter
+ * @Reference:
+ * http://danmartensen.svbtle.com/javascripts-map-reduce-and-filter
+ * Advanced: Implementing filter, map, reduce internals in JS: http://matthewodette.com/map-filter-and-fold-in-javascript/
  */
 
 /** Normal for() loop

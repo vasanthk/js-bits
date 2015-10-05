@@ -9,5 +9,5 @@
 
 (function () {
   console.log(Number.MAX_VALUE > 0); // true
-  console.log(Number.MAX_VALUE > 0); // false... WTF
+  console.log(Number.MIN_VALUE < 0); // false... WTF
 })();

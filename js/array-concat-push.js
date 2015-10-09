@@ -4,7 +4,10 @@
  *
  * Reference:
  * http://gunnariauvinen.com/difference-between-concat-and-push-in-javascript/
+ * http://davidwalsh.name/combining-js-arrays
  * https://jsperf.com/array-prototype-push-apply-vs-concat/13
+ *
+ * Tip: push() adds elements to the end of the array. To add it to the beginning, use unshift()
  *
  */
 

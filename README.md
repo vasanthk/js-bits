@@ -5,7 +5,7 @@ Collection of JavaScript gotchas and concepts related to it.
 * [Array every() some()](js/array-every-some.js)
 * [Array filter() map() reduce()](js/array-filter-map-reduce.js)
 * [Array reduce() detailed](js/array-reduce.js)
-* [Conditionaly function decalration](js/conditional-function-declaration.js)
+* [Conditionaly function declaration](js/conditional-function-declaration.js)
 * [Floating point precision](js/floating-point-precision.js)
 * [Get Url param value](js/get-url-param.js)
 * [Getters and Setters](js/getters-setters.js)

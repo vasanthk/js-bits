@@ -10,6 +10,6 @@
     role: 'Ninja'
   }
 
-  // Nofty trick to clone an objec (or copy by value)
+  // A trick to clone an object (or copy by value)
   var clonedObj = JSON.parse(JSON.stringify(obj));
 })();

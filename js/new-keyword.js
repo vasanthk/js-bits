@@ -18,6 +18,7 @@
  *
  * @Reference:
  * http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
+ * http://zeekat.nl/articles/constructors-considered-mildly-confusing.html
  */
 
 ObjMaker = function() {

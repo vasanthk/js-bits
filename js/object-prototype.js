@@ -12,6 +12,25 @@
  * Just think of constructor functions as classes and the properties of the prototype (ie of the object referenced by the constructor function's prototype property) as shared members, ie members which are the same for each instance.
  * In class-based systems, methods are implemented the same way for each instance, so methods are normally added to the prototype, whereas an object's fields are instance-specific and therefore added to the object itself during construction.
  *
+ *  Two different things can be called "prototype":
+ *    the prototype property, as in obj.prototype
+ *    the prototype internal property, denoted as [[Prototype]] in ES5.
+ *        - It can be retrieved via the ES5 Object.getPrototypeOf().
+ *        - Firefox makes it accessible through the __proto__ property as an extension. ES6 now mentions some optional requirements for __proto__.
+ *
+ *        __proto__ is used for the dot . property lookup as in obj.property.
+ *        .prototype is not used for lookup directly, only indirectly as it determines __proto__ at object creation with new.
+ *
+ *  Lookup order is:
+ *      1. obj properties added with obj.p = ... or Object.defineProperty(obj, ...)
+ *      2. properties of obj.__proto__
+ *      3. properties of obj.__proto__.__proto__, and so on
+ *      4. if some __proto__ is null, return undefined. (Note: At the topmost level Object.__proto__ is null)
+ *
+ *  This is the so-called prototype chain.
+ *  You can avoid . lookup with obj.hasOwnProperty('key') and Object.getOwnPropertyNames(f)
+ *
  * @Reference:
  * http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work/23877420
  */
+

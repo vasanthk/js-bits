@@ -39,6 +39,8 @@
 // 1. new:
 var F = function() {};
 var f = new F();
+// imagine:
+// object.__proto__ = F.prototype;
 
 // then new has set:
 f.__proto__ === F.prototype;
@@ -49,6 +51,8 @@ f.__proto__ === F.prototype;
 
 // 2. Object.create:
 var g = Object.create(proto);
+// imagine:
+// object.__proto__ = proto
 
 // sets:
 g.__proto__ === proto;

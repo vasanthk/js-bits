@@ -34,3 +34,21 @@
  * http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work/23877420
  */
 
+// There are two main ways to set obj.__proto__:
+
+// 1. new:
+var F = function() {};
+var f = new F();
+
+// then new has set:
+f.__proto__ === F.prototype;
+
+//This is where .prototype gets used.
+
+
+
+// 2. Object.create:
+var g = Object.create(proto);
+
+// sets:
+g.__proto__ === proto;

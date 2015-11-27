@@ -12,6 +12,10 @@
  * Once this is done, if an undefined property of the new object is requested, the script will check the object's [[prototype]] object for the property instead.
  * Functions, in addition to the hidden [[prototype]] property, also have a property called prototype, and it is this that you can access, and modify, to provide inherited properties and methods for the objects you make.
  *
+ * The most difficult part about this is point number 2. Every object (including functions) has this internal property called [[prototype]].
+ * It can only be set at object creation time, either with new, with Object.create, or based on the literal (functions default to Function.prototype, numbers to Number.prototype, etc.).
+ * It can be read with Object.getPrototypeOf(someObject) or via __ proto __ or this.constructor.prototype.
+ *
  * @Reference:
  * http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
  */
@@ -43,4 +47,33 @@ obj1.b;
 // obj1 doesn't have a property called 'b', so JavaScript checks its [[prototype]]. Its [[prototype]] is the same as ObjMaker.prototype
 // ObjMaker.prototype has a property called 'b' with value 'second'
 // returns 'second'
+
+
+
+// It's like class inheritance because now, any objects you make using new ObjMaker() will also appear to have inherited the 'b' property.
+// If you want something like a subclass, then you do this:
+SubObjMaker = function () {};
+SubObjMaker.prototype = new ObjMaker(); // note: this pattern is deprecated!
+// Because we used 'new', the [[prototype]] property of SubObjMaker.prototype
+// is now set to the object value of ObjMaker.prototype.
+// The modern way to do this is with Object.create(), which was added in ECMAScript 5:
+// SubObjMaker.prototype = Object.create(ObjMaker.prototype);
+
+SubObjMaker.prototype.c = 'third';
+obj2 = new SubObjMaker();
+// [[prototype]] property of obj2 is now set to SubObjMaker.prototype
+// Remember that the [[prototype]] property of SubObjMaker.prototype
+// is ObjMaker.prototype. So now obj2 has a prototype chain!
+// obj2 ---> SubObjMaker.prototype ---> ObjMaker.prototype
+
+obj2.c;
+// returns 'third', from SubObjMaker.prototype
+
+obj2.b;
+// returns 'second', from ObjMaker.prototype
+
+obj2.a;
+// returns 'first', from SubObjMaker.prototype, because SubObjMaker.prototype
+// was created with the ObjMaker function, which assigned a for us
+
 

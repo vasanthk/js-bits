@@ -19,6 +19,26 @@
  *   http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
  */
 
+(function() {
+// Object.create.
+// When you first encounter this method, you might wonder why JavaScript needs another way to create objects, when it already has the object literal syntax and constructor functions?
+// Where Object.create differs from those options is that lets you provide, as the first argument to the method, an object that will become the new object’s prototype.
+// Remember that there is a difference between an object’s public prototype property and its internal [[Prototype]] property.
+// When JavaScript is looking up properties on an object, it uses the latter, but traditionally the only standardised way to control it for a new object has been to use the pattern applied by __extends.
+// You create a new function with a public prototype property, then apply the new operator on the function to create a new object.
+// When the new operator is used with a function, the runtime sets the [[Prototype]] property of the new object to the object referenced by the public prototype property of the function.
+// While this approach to controlling the [[Prototype]] works, it is a little opaque and wasteful, requiring the declaration of a new function simply for the purpose of controlling this internal property.
+// With Object.create, the extra function is no longer required, as the [[Prototype]] can be controlled directly.
+// A dead simple example would be.
+
+  var animal = { legs: 4 };
+  var dog;
+
+  dog = Object.create(animal);
+  dog.legs == 4; // True
+})();
+
+
 (function () {
   var x = Object.create(null, {prop: {value: 3, writable: false}});
   console.log(x.prop); // output 3

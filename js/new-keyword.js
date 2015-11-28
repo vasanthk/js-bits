@@ -23,6 +23,27 @@
  * https://john-dugan.com/object-oriented-javascript-pattern-comparison/
  */
 
+// When we do this:
+function Foo() {
+  this.kind = 'foo';
+}
+
+var foo = new Foo();
+foo.kind; //=> ‘foo’
+
+
+// Behind the scenes it is like doing something like this:
+function Foo() {
+  var this = {}; // this is not valid, just for illustration
+  this.__proto__ = Foo.prototype;
+
+  this.kind = 'foo';
+
+  return this;
+}
+
+
+// Example
 ObjMaker = function() {
   this.a = 'first';
 };

@@ -5,6 +5,7 @@
  *
  * @Referenc:
  * http://javascriptissexy.com/javascript-objects-in-detail/
+ * https://css-tricks.com/understanding-javascript-constructors/
  */
 
 //Object Data Properties Have Attributes
@@ -174,3 +175,30 @@ delete school.educationLevel2; // true (always returns true, as noted earlier)
 
 // The inherited educationLevel2 property was not deleted​
 console.log(school.educationLevel2); // University 2​
+
+
+// Object.defineProperty Function
+// The Object.defineProperty() can be used inside of a constructor to help perform all necessary property setup.
+
+function Book(name) {
+  Object.defineProperty(this, 'name', {
+    get: function() {
+      return 'Book: ' + name;
+    },
+    set: function(newName) {
+      name = newName;
+    },
+    configurable: false
+  });
+}
+
+var myBook = new Book('Single Pagw Web Applications');
+console.log(myBook.name);    // Book: Single Page Web Applications
+
+// we cannot delete the name property because "configurable" is set to false
+delete myBook.name;
+console.log(myBook.name);    // Book: Single Page Web Applications
+
+// but we can change the value of the name property
+myBook.name = "Testable JavaScript";
+console.log(myBook.name);    // Book: Testable JavaScript

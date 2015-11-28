@@ -30,6 +30,9 @@
  *  This is the so-called prototype chain.
  *  You can avoid . lookup with obj.hasOwnProperty('key') and Object.getOwnPropertyNames(f)
  *
+ *  Prototype is important in JavaScript because JavaScript does not have classical inheritance based on Classes (as most object oriented languages do),
+ *  and therefore all inheritance in JavaScript is made possible through the prototype property. JavaScript has a prototype-based inheritance mechanism.
+ *
  * @Reference:
  * http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work/23877420
  * https://css-tricks.com/understanding-javascript-constructors/
@@ -59,3 +62,57 @@ var g = Object.create(proto);
 
 // sets:
 g.__proto__ === proto;
+
+
+
+// 1. prototype property
+//
+// Every JavaScript function has a prototype property (this property is empty by default),
+// and you attach properties and methods on this prototype property when you want to implement inheritance.
+// This prototype property is not enumerable; that is, it isn’t accessible in a for/in loop.
+// The prototype property is used primarily for inheritance; you add methods and properties on a function’s prototype property
+// to make those methods and properties available to instances of that function.
+function PrintStuff (myDocuments) {
+  this.documents = myDocuments;
+}
+
+// We add the print () method to PrintStuff prototype property so that other instances (objects) can inherit it:​
+PrintStuff.prototype.print = function () {
+  console.log(this.documents);
+};
+
+// Create a new object with the PrintStuff () constructor, thus allowing this new object to inherit PrintStuff's properties and methods.​
+var newObj = new PrintStuff ("I am a new Object and I can print.");
+
+// newObj inherited all the properties and methods, including the print method, from the PrintStuff function.
+// Now newObj can call print directly, even though we never created a print () method on it.​
+newObj.print (); //I am a new Object and I can print.
+
+
+
+// 2. prototype attribute
+//
+// Think of the prototype attribute as a characteristic of the object; this characteristic tells us the object’s “parent”.
+// In simple terms: An object’s prototype attribute points to the object’s “parent”—the object it inherited its properties from.
+// The prototype attribute is normally referred to as the prototype object, and it is set automatically when you create a new object.
+// Every object inherits properties from some other object, and it is this other object that is the object’s prototype attribute or “parent.” (You can think of the prototype attribute as the lineage or the parent).
+
+
+// Prototype Attribute of Objects Created with new Object () or Object Literal
+
+// The userAccount object inherits from Object and as such its prototype attribute is Object.prototype.​
+var userAccount = new Object ();
+
+// This demonstrates the use of an object literal to create the userAccount object; the userAccount object inherits from Object;
+// therefore, its prototype attribute is Object.prototype just as the userAccount object does above.​
+var userAccount = {name: 'Mike'};
+
+
+// Prototype Attribute of Objects Created With a Constructor Function
+function Account () {
+
+}
+var userAccount = new Account ();
+// userAccount initialized with the Account () constructor and as such its prototype attribute (or prototype object) is Account.prototype.
+
+

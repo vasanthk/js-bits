@@ -202,3 +202,7 @@ console.log(myBook.name);    // Book: Single Page Web Applications
 // but we can change the value of the name property
 myBook.name = "Testable JavaScript";
 console.log(myBook.name);    // Book: Testable JavaScript
+// In this code we used accessor properties inside the Object.defineProperty().
+// Accessor properties don’t include any properties or methods, but they define a getter to call when the property is read, and a setter to call when the property is written to.
+// A getter is expected to return a value, while a setter receives the value being assigned to the property as an argument.
+// This constructor allows us to set or change the name property of instances, but we are not allowed to delete it

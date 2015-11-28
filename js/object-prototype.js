@@ -33,6 +33,11 @@
  *  Prototype is important in JavaScript because JavaScript does not have classical inheritance based on Classes (as most object oriented languages do),
  *  and therefore all inheritance in JavaScript is made possible through the prototype property. JavaScript has a prototype-based inheritance mechanism.
  *
+ * Object.prototype Properties Inherited by all Objects
+ * All objects in JavaScript inherit properties and methods from Object.prototype.
+ * These inherited properties and methods are constructor, hasOwnProperty (), isPrototypeOf (), propertyIsEnumerable (), toLocaleString (), toString (), and valueOf ().
+ * ECMAScript 5 also adds 4 accessor methods to Object.prototype.
+ *
  * @Reference:
  * http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work/23877420
  * https://css-tricks.com/understanding-javascript-constructors/

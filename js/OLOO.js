@@ -14,6 +14,7 @@ Foo.prototype.y = 11;
 
 function Bar() {
 }
+// Object.create(proto[, propertiesObject]) method creates a new object with the specified prototype object and properties.
 Bar.prototype = Object.create(Foo.prototype);
 Bar.prototype.z = 31;
 

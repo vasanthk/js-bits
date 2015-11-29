@@ -31,3 +31,28 @@ greetHello("Vignesh"); //"Hello, Vignesh"
 // We can also call the original curried function directly, just by passing each of the parameters
 // in a separate set of parentheses, one right after the other:
 greetCurried("Hi there")("Vasa"); //"Hi there, Vasa"
+
+
+// Currying traditional functions
+//
+// The only problem with the currying approach is the syntax. As you build these curried functions up, you need to keep nesting returned functions,
+// and call them with new functions that require multiple sets of parentheses, each containing its own isolated argument. It can get messy.
+// To address that problem, one approach is to create a quick and dirty currying function that will take the name of an existing function that was written without all the nested returns.
+// A currying function would need to pull out the list of arguments for that function, and use those to return a curried version of the original function:
+
+function curryIt(uncurriedFn) {
+  var parameters = Array.prototype.slice.call(arguments, 1);  // Omit 0th argument (which is the uncurriedFn and start from index 1)
+  return function() {
+    return uncurriedFn.apply(this, parameters.concat(
+      Array.prototype.slice.call(arguments, 0)
+    ));
+  };
+}
+
+// Usage
+var greeter = function(greeting, separator, emphasis, name) {
+  console.log(greeting + separator + name + emphasis);
+};
+var greetHello = curryIt(greeter, "Hello", ", ", ".");
+greetHello("Heidi"); //"Hello, Heidi."
+greetHello("Eddie"); //"Hello, Eddie."

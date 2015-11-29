@@ -43,6 +43,7 @@
  * https://css-tricks.com/understanding-javascript-constructors/
  * http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/
  * http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/
+ * https://davidwalsh.name/javascript-objects
  */
 
 // There are two main ways to set obj.__proto__:

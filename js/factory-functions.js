@@ -3,6 +3,7 @@
  *
  * @Reference:
  * https://www.youtube.com/watch?v=ImwrezYhw4w
+ * http://atendesigngroup.com/blog/factory-functions-javascript
  *
  */
 
@@ -74,3 +75,57 @@ function factoryFunction() {
 // other code to manipulate obj in some way here
 return obj;
 }
+
+
+// Factory functions: Encapsulation using private properties
+function Car () {
+  // private variable
+  var location = 'Denver';    // PRIVATE
+  function year() {           // PRIVATE
+    self.year = new Date().getFullYear();
+  }
+
+  var self = {
+    make: 'Honda',
+    model: 'Accord',
+    color: '#cc0000',
+    paint: function(color){
+      self.color = color;
+    }
+  };
+
+  if (!self.year){
+    year();
+  }
+
+  return self;
+}
+
+var myCar = Car();
+
+
+
+// Factory functions: Dynamic objects
+// Since we can have public/private functions we can use if/else statements to easily manipulate our object structure.
+// This gives ultimate flexibility to allow the root function ambiguity and allow parameters to determine what the object returned should be.
+function Address (param) {
+  var self = {};
+
+  if (param === 'dev'){
+    self = {
+      state: 'Colorado',
+      saveToLog: function(){
+        // write info to a log file
+      }
+    };
+  } else {
+    self = {
+      state: 'Colorado'
+    };
+  }
+
+return self;
+}
+
+var devAddress = Address('dev');
+var productionAddress = Address();

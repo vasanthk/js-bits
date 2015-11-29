@@ -6,10 +6,17 @@
  * What this means is that you can pass all of the arguments a function is expecting and get the result,
  * or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. It really is that simple.
  *
+ * Currying vs Partial Application
+ * “Currying is the decomposition of a polyadic function into a chain of nested unary functions.
+ * Thus decomposed, you can partially apply one or more arguments,3 although the curry operation itself does not apply any arguments to the function.”
+ *
+ * “Partial application is the conversion of a polyadic function into a function taking fewer arguments arguments by providing one or more arguments in advance.”
+ *
  * @Reference:
  * http://www.sitepoint.com/currying-in-functional-javascript/
  * https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe#.nhp2e7pcm
  * https://medium.com/@kevincennis/currying-in-javascript-c66080543528#.bnk4cy1m0
+ * http://raganwald.com/2013/03/07/currying-and-partial-application.html
  *
  */
 

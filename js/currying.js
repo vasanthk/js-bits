@@ -1,23 +1,27 @@
 /**
  * Currying
+ * Currying refers to the process of transforming a function with multiple arity (# or args a fn accepts) into the same function with less arity.
+ *
  * Briefly, currying is a way of constructing functions that allows partial application of a function’s arguments.
  * What this means is that you can pass all of the arguments a function is expecting and get the result,
  * or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. It really is that simple.
  *
  * @Reference:
  * http://www.sitepoint.com/currying-in-functional-javascript/
+ * https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe#.nhp2e7pcm
+ * https://medium.com/@kevincennis/currying-in-javascript-c66080543528#.bnk4cy1m0
  *
  */
 
 // Simple Greet function -- Non Curried
-var greet = function(greeting, name) {
+var greet = function (greeting, name) {
   console.log(greeting + ', ' + name);
 };
 greet('Hello', 'Vasa'); // 'Hello, Vasa'
 
 // Curried version
-var greetCurried = function(greeting) {
-  return function(name) {
+var greetCurried = function (greeting) {
+  return function (name) {
     console.log(greeting + ', ' + name);
   }
 };
@@ -33,7 +37,7 @@ greetHello("Vignesh"); //"Hello, Vignesh"
 greetCurried("Hi there")("Vasa"); //"Hi there, Vasa"
 
 
-// Currying traditional functions
+// Currying traditional functions -- SIMPLE VERSION
 //
 // The only problem with the currying approach is the syntax. As you build these curried functions up, you need to keep nesting returned functions,
 // and call them with new functions that require multiple sets of parentheses, each containing its own isolated argument. It can get messy.
@@ -42,7 +46,7 @@ greetCurried("Hi there")("Vasa"); //"Hi there, Vasa"
 
 function curryIt(uncurriedFn) {
   var parameters = Array.prototype.slice.call(arguments, 1);  // Omit 0th argument (which is the uncurriedFn and start from index 1)
-  return function() {
+  return function () {
     return uncurriedFn.apply(this, parameters.concat(
       Array.prototype.slice.call(arguments, 0)
     ));
@@ -50,9 +54,25 @@ function curryIt(uncurriedFn) {
 }
 
 // Usage
-var greeter = function(greeting, separator, emphasis, name) {
+var greeter = function (greeting, separator, emphasis, name) {
   console.log(greeting + separator + name + emphasis);
 };
 var greetHello = curryIt(greeter, "Hello", ", ", ".");
 greetHello("Heidi"); //"Hello, Heidi."
 greetHello("Eddie"); //"Hello, Eddie."
+
+
+// curryIt --- BETTER VERSION
+// Reference: https://medium.com/@kevincennis/currying-in-javascript-c66080543528#.bnk4cy1m0
+function curryIt(fn) {
+  var arity = fn.length;
+  return (function resolver() {
+    var memory = Array.prototype.slice.call(arguments);
+    return function () {
+      var local = memory.slice(), next;
+      Array.prototype.push.apply(local, arguments);
+      next = local.length >= arity ? fn : resolver;
+      return next.apply(null, local);
+    };
+  }());
+}

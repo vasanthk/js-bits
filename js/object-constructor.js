@@ -6,6 +6,7 @@
  * @Referenc:
  * http://javascriptissexy.com/javascript-objects-in-detail/
  * https://css-tricks.com/understanding-javascript-constructors/
+ * http://stackoverflow.com/a/14172862/1672655
  */
 
 //Object Data Properties Have Attributes

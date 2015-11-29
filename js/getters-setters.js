@@ -10,7 +10,6 @@
  */
 
 // Getters and Setters as explicit methods
-
 (function () {
   function wrapValue(value) {
     return {
@@ -29,8 +28,7 @@
   console.log(x.getValue()); // output 7
 })();
 
-// Using getters and setters.
-
+// Using getters and setters -- Conventional way
 (function () {
   function wrapValue(_value) {
     return {
@@ -47,4 +45,26 @@
   console.log(x.value); // output 5
   x.value = 7;
   console.log(x.value); // output 7
+})();
+
+// Using getters and setters -- Using Object.defineProperty
+// When you define a property this way, you can do much more than just define a setter or getter. You may also pass following keys:
+// configurable (false by default): if this is true, the property's configuration will be modifiable in future.
+// enumerable (false by default): if true, the property will appear when looping over the object (for (var key in obj)).
+(function() {
+  var person = {
+    firstName: 'Jimmy',
+    lastName: 'Smith'
+  };
+
+  Object.defineProperty(person, 'fullName', {
+    get: function() {
+      return firstName + ' ' + lastName;
+    },
+    set: function(name) {
+      var words = name.split(' ');
+      this.firstName = words[0] || '';
+      this.lastName = words[1] || '';
+    }
+  });
 })();

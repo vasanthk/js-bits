@@ -6,6 +6,7 @@
  *
  * @Reference
  * http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
+ * http://javascriptplayground.com/blog/2013/12/es5-getters-setters/
  */
 
 // Getters and Setters as explicit methods

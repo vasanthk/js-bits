@@ -10,7 +10,11 @@
  * our mixin can be a regular object, a prototype, a function – whatever, and the mixin process becomes transparent and obvious.
  *
  * @Reference:
+ * https://javascriptweblog.wordpress.com/2011/05/31/a-fresh-look-at-javascript-mixins/
  * https://lostechies.com/derickbailey/2012/10/07/javascript-mixins-beyond-simple-object-extension/
+ * http://raganwald.com/2014/04/10/mixins-forwarding-delegation.html
+ * http://bob.yexley.net/dry-javascript-with-mixins/
+ * https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.osy5v7ih0
  */
 
 // build a mixin function to take a target that receives the mixin,

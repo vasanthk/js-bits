@@ -25,6 +25,7 @@
  * http://www.codeproject.com/Articles/369858/Writing-polyfills-in-Javascript
  * http://blog.respoke.io/post/111278536998/javascript-shim-vs-polyfill
  * https://davidwalsh.name/monkey-patching
+ * http://benno.id.au/blog/2010/01/01/monkey-patching-javascript
  */
 
 /**
@@ -74,7 +75,7 @@ Array.prototype.forEach = function (callback, thisArg) {
 
 // Usage
 var arr = [1, 2, 3];
-arr.forEach(function(item, index, th) {
+arr.forEach(function (item, index, th) {
   console.log(item, index, th);
 });
 
@@ -82,3 +83,38 @@ arr.forEach(function(item, index, th) {
 //    1 0 [ 1, 2, 3 ]
 //    2 1 [ 1, 2, 3 ]
 //    3 2 [ 1, 2, 3 ]
+
+
+/**
+ * MONKEY PATCHING
+ * Simple example to monkey patch a method in an object
+ *
+ * @Reference:
+ * https://gist.github.com/vasanthk/5edd3a1f5f1231221fa4
+ */
+
+// Original method
+var object = {
+  method: function (x, y) {
+    return x + y;
+  }
+};
+
+// Add operations before or after
+object.method = (function (original) {
+  return function (x, y) {
+    // before
+    // we could here modify 'arguments' to alter original input
+    console.log(x, '+', y, '?');
+
+    // execute
+    var result = original.apply(this, arguments);
+
+    // after
+    // here we could work on result to alter original output
+    console.log('=', result);
+
+    // aaaand the result
+    return result;
+  }
+})(object.method);

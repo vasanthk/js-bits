@@ -26,3 +26,28 @@
  * http://blog.respoke.io/post/111278536998/javascript-shim-vs-polyfill
  * https://davidwalsh.name/monkey-patching
  */
+
+/**
+ * SHIM
+ * Shim layer for requestAnimationFrame with setTimeout fallback
+ *
+ * @Reference:
+ * http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+ */
+
+window.requestAnimFrame = (function () {
+  return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function (callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+})();
+
+// Usage:
+// Instead of setInterval(render, 16)
+(function animloop(){
+  requestAnimFrame(animloop);
+  render();
+})();
+// Place the rAF *before* the render() to assure as close to 60fps with the setTimeout fallback.

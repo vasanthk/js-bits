@@ -26,6 +26,8 @@
  * http://blog.respoke.io/post/111278536998/javascript-shim-vs-polyfill
  * https://davidwalsh.name/monkey-patching
  * http://benno.id.au/blog/2010/01/01/monkey-patching-javascript
+ * http://me.dt.in.th/page/JavaScript-override/
+ * http://benno.id.au/blog/2010/01/01/monkey-patching-javascript
  */
 
 /**

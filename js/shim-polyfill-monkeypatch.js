@@ -46,8 +46,39 @@ window.requestAnimFrame = (function () {
 
 // Usage:
 // Instead of setInterval(render, 16)
-(function animloop(){
+(function animloop() {
   requestAnimFrame(animloop);
   render();
 })();
 // Place the rAF *before* the render() to assure as close to 60fps with the setTimeout fallback.
+
+
+/**
+ * POLYFILL
+ * A simple polyfill for Array.prototype.forEach()
+ *
+ * @Reference:
+ * http://javascriptplayground.com/blog/2012/06/writing-javascript-polyfill/
+ *
+ */
+
+Array.prototype.forEach = function (callback, thisArg) {
+  if (typeof(callback) !== 'function') {
+    throw new TypeError(callback + ' is not a function');
+  }
+  var len = this.length;
+  for (var i = 0; i < len; i++) {
+    callback.call(thisArg, this[i], i, this); // this[i] is the item, i is the index and `this` is the `this` arg for it.
+  }
+};
+
+// Usage
+var arr = [1, 2, 3];
+arr.forEach(function(item, index, th) {
+  console.log(item, index, th);
+});
+
+//    Output
+//    1 0 [ 1, 2, 3 ]
+//    2 1 [ 1, 2, 3 ]
+//    3 2 [ 1, 2, 3 ]

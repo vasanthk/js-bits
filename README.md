@@ -7,7 +7,6 @@ Collection of JavaScript gotchas and concepts related to it.
 * [Array reduce() detailed](js/array-reduce.js)
 * [Conditionaly function declaration](js/conditional-function-declaration.js)
 * [Floating point precision](js/floating-point-precision.js)
-* [Get Url param value](js/get-url-param.js)
 * [Getters and Setters](js/getters-setters.js)
 * [Logical operations with string](js/logical-operations-with-string.js)
 * [Number Max Min val](js/number-maxmin-val.js)
@@ -15,4 +14,3 @@ Collection of JavaScript gotchas and concepts related to it.
 * [Object create()](js/object-create.js)
 * [Object keys](js/object-keys.js)
 * [setTimeout inside a loop](js/setTimeout-inside-loop.js)
-* [Convert string booleans to actual boolean](js/string-bool-to-bool.js)

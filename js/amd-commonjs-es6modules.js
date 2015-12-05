@@ -1,6 +1,11 @@
 /**
  * Modules
  *
+ * Why is modularity important?
+ * - it encourages the development of small isolated modules with clear interfaces, as opposed to large chunks of monolithic code
+ * - it helps with testability, as modules can be replaced at runtime with mocks that implement the same interface
+ * - it improves code maintainability, as smaller and well isolated modules are easier to understand
+ *
  * AMD vs CommonJS vs ES6 Modules
  *
  * @Reference:

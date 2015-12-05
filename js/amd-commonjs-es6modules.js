@@ -8,6 +8,9 @@
  * https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules
  * http://javascript.tutorialhorizon.com/2014/09/01/understanding-nodejs-module-exports-and-require/
  * http://www.2ality.com/2014/09/es6-modules-final.html
+ *
+ * Module Pattern:
+ * http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
  */
 
 /**

@@ -21,3 +21,32 @@
  * Since AMD modules need to be able to fetch dependencies just-in-time, they need a callback wrapper around a module which produces slightly more overhead in your module definition.
  */
 
+// foo.js
+// Define a module called foo
+define('foo', function () {
+  return {
+    method: function () {
+      return 'food method result';
+    }
+  }
+});
+
+// bar.js
+// Define a module called 'bar', which is dependent on the 'foo' module
+define('bar', ['foo'], function (Foo) {
+  return {
+    barMethod: function () {
+      return 'bar method result';
+    },
+    fooMethod: function () {
+      return Foo.method();
+    }
+  };
+});
+
+// Require the bar module and use it within the require wrapper
+require(['bar'], function (bar) {
+  // Do something with fetched dependency
+  bar.barMethod();
+  bar.fooMethod();
+});

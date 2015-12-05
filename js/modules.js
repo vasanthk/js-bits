@@ -63,3 +63,32 @@ require(['bar'], function (bar) {
  * CommonJS modules are always included directly and can’t be fetched just-in-time.
  *
  */
+
+// foo.js
+// Define a module called 'foo'
+var foo = function () {
+  return 'foo method result';
+};
+
+// expose foo to other modules
+exports.method = foo;
+
+// bar.js
+// Define a mofule called 'bar', which is dependent on the 'foo' module.
+var Foo = require('foo');
+var barMethod = function () {
+  return 'barMethod result';
+};
+var fooMethod = function () {
+  return Foo.method();
+};
+
+exports.barMethod = barMethod;
+exports.fooMethod = fooMethod;
+
+
+// Require the bar module
+var bar = require('bar');
+// Do something with the fetched dependency
+bar.barMethod();
+bar.fooMethod();

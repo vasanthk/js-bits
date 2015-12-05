@@ -92,3 +92,11 @@ var bar = require('bar');
 // Do something with the fetched dependency
 bar.barMethod();
 bar.fooMethod();
+
+/**
+ * Hybrid
+ *
+ * Some AMD loaders also offer a hybrid format between AMD and CommonJS modules.
+ * It scans the contents at runtime to determine what modules to preload, so even though it seems to be synchronous, it’s not.
+ *
+ */

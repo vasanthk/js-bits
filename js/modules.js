@@ -123,3 +123,59 @@ define(function (require, exports, module) {
   exports.max = math.max;
   exports.add = math.add;
 });
+
+
+/**
+ * ES6 Modules
+ *
+ * ES6 modules will support both synchronous and asynchronous loading within the same syntax. And even better, they will work both on the browser and on the server.
+ *
+ */
+
+// EXPORTING
+// exporter.js
+export function someMethod() {
+  // Do some stuff
+}
+
+export var another = {};
+
+// IMPORTING
+// importer.js
+import { someMethod, another as newName } from './exporter';
+
+someMethod();
+// typeof newName == 'object';
+
+
+// DEFAULT IMPORT AND EXPORT
+// export-default.js
+export default function foo() {
+  console.log('foo');
+}
+
+// import-default.js
+import customName from './export-default';
+customName(); // -> 'foo'
+
+
+// ALL SUPPORTED SYNTAX
+import 'jquery';                        // import a module without any import bindings
+import $ from 'jquery';                 // import the default export of a module
+import { $ } from 'jquery';             // import a named export of a module
+import { $ as jQuery } from 'jquery';   // import a named export to a different name
+
+export var x = 42;                      // export a named variable
+export function foo() {};               // export a named function
+
+export default 42;                      // export the default export
+export default function foo() {};       // export the default export as a function
+
+export { encrypt };                     // export an existing variable
+export { decrypt as dec };              // export a variable as a new name
+export { encrypt as en } from 'crypto'; // export an export from another module
+export * from 'crypto';                 // export all exports from another module
+
+import * as crypto from 'crypto';    // import an entire module instance object
+
+// Note that any valid declaration can be exported. In ES6, this includes class, const, and let.

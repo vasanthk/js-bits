@@ -50,3 +50,16 @@ require(['bar'], function (bar) {
   bar.barMethod();
   bar.fooMethod();
 });
+
+/**
+ * CommonJS
+ *
+ * CommonJS are designed from the ground up to suit the (NodeJS) server environment
+ * Since CommonJS modules don’t have to fetch modules just-in-time, there is no need to put a wrapper with a callback structure around a module.
+ * This makes a module look more clear and tidy. These modules are also called “naked” modules.
+ *
+ * CommonJS modules don’t work natively in the browser environment.
+ * Instead, they rely on a build step, which evaluates the require calls, and alters the module code by parsing dependent modules.
+ * CommonJS modules are always included directly and can’t be fetched just-in-time.
+ *
+ */

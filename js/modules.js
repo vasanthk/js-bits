@@ -6,6 +6,7 @@
  * @Reference:
  * http://www.dynamicjavascript.com/amd-and-commonjs-modules-comparison/
  * https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules
+ * http://www.2ality.com/2014/09/es6-modules-final.html
  */
 
 /**

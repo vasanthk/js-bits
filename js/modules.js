@@ -100,3 +100,9 @@ bar.fooMethod();
  * It scans the contents at runtime to determine what modules to preload, so even though it seems to be synchronous, it’s not.
  *
  */
+
+define(function (require, exports, module) {
+  var math = require('lib/math');
+  exports.max = math.max;
+  exports.add = math.add;
+});

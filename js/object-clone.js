@@ -8,7 +8,7 @@
   var obj = {
     name: 'vasa',
     role: 'Ninja'
-  }
+  };
 
   // A trick to clone an object (or copy by value)
   var clonedObj = JSON.parse(JSON.stringify(obj));

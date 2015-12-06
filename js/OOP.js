@@ -30,7 +30,10 @@ function User (theName, theEmail) {
   this.currentScore = 0;
 }
 
+// Overwriting the prototype object -- Wonder if this has any bad implications?
 User.prototype = {
+  // The one disadvantage of overwriting the prototype is that the constructor property no longer points to the prototype,
+  // so we have to set it manually. Hence this line:
   constructor: User,
   saveScore:function (theScoreToAdd)  {
     this.quizScores.push(theScoreToAdd)

@@ -13,10 +13,15 @@
  * - You can easily specify the properties of the newly created object,
  *   including their descriptors: configurable, enumerable, and writable.
  *
+ *   Enumerable: I can access to all of them using a for..in loop. Also, enumerable property keys of an object are returned using Object.keys method.
+ *   Writable: I can modify their values, I can update a property just assigning a new value to it: ob.a = 1000;
+ *   Configurable: I can modify the behavior of the property, so I can make them non-enumerable, non-writable or even non-configurable if I feel like doing so. Configurable properties are the only ones that can be removed using the delete operator.
+ *
  *   Object.create() has been available in all browsers since IE9.
  *
  *   @Reference:
  *   http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
+ *   http://arqex.com/967/javascript-properties-enumerable-writable-configurable
  */
 
 (function() {

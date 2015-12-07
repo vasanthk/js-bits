@@ -1,14 +1,20 @@
 /**
  * Object Oriented Programming in JavaScript
  *
+ * Prototype-based programming is an OOP model that doesn't use classes, but rather it first accomplishes the behavior of any class and then reuses it (equivalent to inheritance in class-based languages)
+ * by decorating (or expanding upon) existing prototype objects. (Also called classless, prototype-oriented, or instance-based programming.)
+ *
  * Inheritance
  * Refers to an object being able to inherit methods and properties from a parent object (a Class in other OOP languages, or a Function in JavaScript)
  *
  * Polymorphism
- * Objects can share the same interface — how they are accessed and used—while their underlying implementation of the interface may differ.
+ * Polymorphism is the presentation of one interface for multiple data types.
+ * For example, integers, floats, and doubles are implicitly polymorphic: regardless of their different types, they can all be added, subtracted, multiplied, and so on.
+ * In the case of OOP, by making the class responsible for its code as well as its own data, polymorphism can be achieved in that each class has its own function that (once called) behaves properly for any object.
  *
  * Encapsulation
- * Refers to enclosing all the functionalities of an object within that object so that the object’s internal workings (its methods and properties) are hidden from the rest of the application.
+ * Encapsulation is the packing of data and functions into one component (for example, a class) and then controlling access to that component to make a "blackbox" out of the object.
+ * Because of this, a user of that class only needs to know its interface (that is, the data and functions exposed outside the class), not the hidden implementation.
  * This allows us to abstract or localize specific set of functionalities on objects.
  *
  * Why Encapsulation?

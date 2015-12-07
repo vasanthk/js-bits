@@ -84,6 +84,18 @@ Object.create = function (o) {
   return new F();
 };
 
+// Sample usage
+// We have a simple cars object​
+var cars = {
+  type:"sedan",
+  wheels:4
+};
+
+// We want to inherit from the cars object, so we do:​
+var toyota = Object.create (cars); // now toyota inherits the properties from cars​
+console.log(toyota.type); // sedan
+
+
 // Parasitic Combination Inheritance Pattern
 
 

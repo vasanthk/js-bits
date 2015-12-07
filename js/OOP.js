@@ -18,6 +18,7 @@
  * you encapsulate the main functionalities in a Function and you use that Function’s constructor to create the objects. This is the essence of encapsulation.
  *
  * @Reference:
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
  * http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
  */
 

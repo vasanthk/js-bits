@@ -3,6 +3,7 @@
  *
  * @Reference:
  * http://javascript.info/tutorial/bubbling-and-capturing
+ * http://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
  *
  */
 

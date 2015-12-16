@@ -46,25 +46,25 @@ var newString = someString.replace(/a{2}/, "lol");
 
 
 // String.prototype.slice()
-var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!"
+var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!";
 var previewStory = story.slice(0, 40); //Foobarus is a magical unicorn with an ID
 
 
 // String.prototype.split()
-var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!"
+var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!";
 var previewStory = story.split(".");
 console.log(previewStory[0]); //Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns
 console.log(previewStory[1]); //Unicorns fly?  Regardless!
 
 
 // String.prototype.substring()
-var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!"
+var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!";
 var theLastFewCharacters = story.substring(story.length - 20);
 console.log("..." + theLastFewCharacters); // ..ns fly?  Regardless!
 
 
 // String.prototype.toLowerCase() and String.prototype.toUpperCase()
-var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!"
+var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!";
 var allUpperCase = story.toUpperCase();
 var allLowerCase = story.toLowerCase();
 var foobarus = allUpperCase.match(/FOOBARUS/); //["FOOBARUS", index: 0, input: "FOOBARUS IS A MAGICAL UNICORN WITH AN ID OF 21313 …N ALL OTHER UNICORNS.  UNICORNS FLY?  REGARDLESS!]

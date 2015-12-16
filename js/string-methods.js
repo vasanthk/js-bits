@@ -4,6 +4,8 @@
  * @Reference:
  * http://www.w3schools.com/js/js_string_methods.asp
  * http://techiejs.com/Blog/Post/Essential-JavaScript-String-Functions
+ * https://rapd.wordpress.com/2007/07/12/javascript-substr-vs-substring/
+ * http://www.bennadel.com/blog/2159-using-slice-substring-and-substr-in-javascript.htm
  *
  */
 
@@ -58,6 +60,14 @@ console.log(previewStory[1]); //Unicorns fly?  Regardless!
 
 
 // String.prototype.substring()
+// NOTE:
+// The second argument to substring is the index to stop at (but not include),
+// but the second argument to substr is the maximum length to return.
+// Syntax: string.substr(start, length);
+// Syntax: string.substring(start, stop);
+//
+// Also, the slice() and substring() methods are roughly the same:
+// the only difference is that the slice() method can accept a negative index, relative to the end of the string.
 var story = "Foobarus is a magical unicorn with an ID of 21313 which flies higher than all other unicorns.  Unicorns fly?  Regardless!";
 var theLastFewCharacters = story.substring(story.length - 20);
 console.log("..." + theLastFewCharacters); // ..ns fly?  Regardless!

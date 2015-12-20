@@ -8,7 +8,7 @@
  *
  * Currying vs Partial Application
  * “Currying is the decomposition of a polyadic function into a chain of nested unary functions.
- * Thus decomposed, you can partially apply one or more arguments,3 although the curry operation itself does not apply any arguments to the function.”
+ * Thus decomposed, you can partially apply one or more arguments, although the curry operation itself does not apply any arguments to the function.”
  *
  * “Partial application is the conversion of a polyadic function into a function taking fewer arguments arguments by providing one or more arguments in advance.”
  *

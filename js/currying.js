@@ -20,6 +20,7 @@
  * http://ejohn.org/blog/partial-functions-in-javascript/
  * http://stackoverflow.com/questions/113780/javascript-curry-what-are-the-practical-applications
  * http://conceptf1.blogspot.com/2014/03/currying-in-javascript.html
+ * https://www.youtube.com/watch?v=iZLP4qOwY8I
  *
  */
 

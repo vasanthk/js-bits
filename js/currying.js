@@ -17,6 +17,9 @@
  * https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe#.nhp2e7pcm
  * https://medium.com/@kevincennis/currying-in-javascript-c66080543528#.bnk4cy1m0
  * http://raganwald.com/2013/03/07/currying-and-partial-application.html
+ * http://ejohn.org/blog/partial-functions-in-javascript/
+ * http://stackoverflow.com/questions/113780/javascript-curry-what-are-the-practical-applications
+ * http://conceptf1.blogspot.com/2014/03/currying-in-javascript.html
  *
  */
 

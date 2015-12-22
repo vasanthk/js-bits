@@ -30,6 +30,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript
  * http://javascriptissexy.com/oop-in-javascript-what-you-need-to-know/
  * http://stackoverflow.com/questions/8453887/why-is-it-necessary-to-set-the-prototype-constructor
+ * http://www.toptal.com/javascript/javascript-prototypes-scopes-and-performance-what-you-need-to-know
  */
 
 /**

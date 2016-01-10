@@ -2,6 +2,9 @@
  * bind()
  *
  * Polyfill implementation below
+ *
+ * @Reference:
+ * http://ejohn.org/apps/learn/#86
  */
 
 Function.prototype.bind = function() {

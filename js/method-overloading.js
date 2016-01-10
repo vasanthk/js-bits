@@ -27,7 +27,7 @@ function addMethod(object, name, fn) {
     if (fn.length == arguments.length)
     // if the number of parameters belonging to the function we've added
     // matches what was passed in, call "fn"
-      return fn.apply(this, arguments)
+      return fn.apply(this, arguments);
 
     else if (typeof old == 'function')
     // Otherwise if there's another function with this name

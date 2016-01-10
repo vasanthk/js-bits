@@ -4,6 +4,7 @@
  * @Reference:
  * http://ejohn.org/blog/javascript-method-overloading/
  *
+ * Best practises: http://stackoverflow.com/questions/456177/function-overloading-in-javascript-best-practices
  */
 
 function addMethod(object, name, fn){

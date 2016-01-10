@@ -5,24 +5,35 @@
  * http://ejohn.org/blog/javascript-method-overloading/
  * http://ejohn.org/apps/learn/#90
  *
+ * Explanation:
+ * http://stackoverflow.com/a/30989908/1672655
+ * http://stackoverflow.com/a/18122417/1672655
+ *
  * Best practises: http://stackoverflow.com/questions/456177/function-overloading-in-javascript-best-practices
  */
 
 function addMethod(object, name, fn) {
-  // Save a reference to the old method
+
   var old = object[name];
+  // Get the old function corresponding to this name. Will be "undefined"
+  // the first time "addMethod" is called.
 
-  // Overwrite the method with our new one
+
   object[name] = function () {
-    // Check the number of incoming arguments,
-    // compared to our overloaded function
-    if (fn.length == arguments.length)
-    // If there was a match, run the function
-      return fn.apply(this, arguments);
+    // Now, assign object[name] to a new function.
+    // The critical part of this function is that "old" is captured inside of
+    // this function and will be available any time the function is called.
 
-    // Otherwise, fallback to the old method
-    else if (typeof old === "function")
+    if (fn.length == arguments.length)
+    // if the number of parameters belonging to the function we've added
+    // matches what was passed in, call "fn"
+      return fn.apply(this, arguments)
+
+    else if (typeof old == 'function')
+    // Otherwise if there's another function with this name
+    // call it instead.
       return old.apply(this, arguments);
+
   };
 }
 

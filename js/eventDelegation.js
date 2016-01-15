@@ -2,7 +2,7 @@
  * Event Delegation in Vanilla JS
  *
  * JSFiddle:
- * https://jsfiddle.net/vasanthkay/sokgevhr/
+ * https://jsfiddle.net/vasanthkay/sokgevhr/7/
  *
  * @Reference:
  * Excellent Article:

@@ -40,6 +40,7 @@
  *
  * @Reference:
  * http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work/23877420
+ * https://medium.com/@will_gottchalk/javascript-interview-questions-javascript-is-a-prototypal-language-what-do-i-mean-by-this-76937a9aa42a#.23dpi96xy
  * https://css-tricks.com/understanding-javascript-constructors/
  * http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/
  * http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/

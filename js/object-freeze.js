@@ -9,6 +9,7 @@
  *
  * @Reference:
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
+ * http://adripofjavascript.com/blog/drips/immutable-objects-with-object-freeze.html
  *
  */
 

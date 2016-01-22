@@ -1,5 +1,5 @@
-#JavaScript Gotchas
-Collection of JavaScript gotchas and concepts related to it.
+#JS Bits
+Collection of JavaScript concepts and gotchas. Just for reference.
 
 * [Array concat() push()](js/array-concat-push.js)
 * [Array every() some()](js/array-every-some.js)

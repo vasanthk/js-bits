@@ -19,7 +19,7 @@
 // some() breaks once it returns true
 (function () {
   // God of cricket
-  var ar = ['Sachin', 'Lara', 'De Villiers'];
+  var ar = ['Lara', 'Sachin', 'De Villiers'];
   ar.some(function (v) {
     if (v === 'Sachin') {
       return true;

@@ -26,28 +26,32 @@
 
 
 // HELPER FUNCTION
-function delegate (criteria, listener) {
+function delegate(criteria, listener) {
   return function (e) {
     var el = e.target;
     do {
-      if (!criteria(el)) continue;
+      if (!criteria(el)) {
+        continue;
+      }
       e.delegateTarget = el;
-      listener.apply(this, arguments);
+      listener.call(this, e);
       return;
     } while ((el = el.parentNode));
   };
 }
 
 // Example of Event Delegation
+// Custom filter to check for required DOM elements
 var buttonsFilter = function (elem) {
-  return elem.matches('.btn');  // IE9+
-
-  // For older browsers, we can use
-  // elem.classList && elem.classList.contains('btn')
+  return (elem instanceof HTMLElement) && elem.matches(".btn");
+  // OR
+  // For < IE9
+  // return elem.classList && elem.classList.contains('btn');
 };
+
 var buttonHandler = function (e) {
   var button = e.delegateTarget;
-  var hasActiveClass = criteria.hasClass('active');
+  var hasActiveClass = button.classList.contains('active');
 
   if (!hasActiveClass(button)) {
     button.classList.add('active');

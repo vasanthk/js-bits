@@ -14,7 +14,7 @@
  *
  * The most difficult part about this is point number 2. Every object (including functions) has this internal property called [[prototype]].
  * It can only be set at object creation time, either with new, with Object.create, or based on the literal (functions default to Function.prototype, numbers to Number.prototype, etc.).
- * It can be read with Object.getPrototypeOf(someObject) or via __ proto __ or this.constructor.prototype.
+ * It can be read with Object.getPrototypeOf(someObject) or via __proto__ or this.constructor.prototype.
  *
  * @Reference:
  * http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
@@ -34,12 +34,11 @@ foo.kind; //=> ‘foo’
 
 // Behind the scenes it is like doing something like this:
 function Foo() {
-  var this = {}; // this is not valid, just for illustration
-  this.__proto__ = Foo.prototype;
-
-  this.kind = 'foo';
-
-  return this;
+  // this is not valid, just for illustration
+  var this = {};                  // Step 1
+  this.__proto__ = Foo.prototype; // Step 2
+  this.kind = 'foo';              // Step 3
+  return this;                    // Step 4
 }
 
 
@@ -59,7 +58,8 @@ obj1 = new ObjMaker();
 // 3 things just happened.
 // A new, empty object was created called obj1. At first obj1 was the same as {}.
 // The [[prototype]] property of obj1 was then set to the current object value of the ObjMaker.prototype
-// Note: If ObjMaker.prototype is later assigned a new value, obj1's [[prototype]] will not change, but you can alter the propertues of ObjMaker.prototype to add to both the prototype and [[prototype]].
+// Note: If ObjMaker.prototype is later assigned a new value, obj1's [[prototype]] will not change,
+// but you can alter the properties of ObjMaker.prototype to add to both the prototype and [[prototype]].
 // The ObjMaker function was executed, with obj1 in place of `this`. So obj1.a was set to 'first'.
 
 

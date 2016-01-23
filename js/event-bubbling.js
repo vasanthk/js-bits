@@ -24,11 +24,12 @@ element.onclick = function (event) {
 // Also, the browser doesn’t guarantee the order in which they trigger.
 
 // CAPTURING
-// n all browsers, except IE<9, there are two stages of event processing.
+// In all browsers, except IE<9, there are two stages of event processing.
 // The event first goes down - that’s called capturing, and then bubbles up.
 // This behavior is standardized in W3C specification.
 
-// All methods of event handling ignore the caputiring phase. Using addEventListener with last argument true is only the way to catch the event at capturing.
+// All methods of event handling ignore the capturing phase.
+// Using addEventListener with last argument true is only the way to catch the event at capturing.
 
 // elem.addEventListener( type, handler, phase );
 // phase = true

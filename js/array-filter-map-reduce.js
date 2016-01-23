@@ -14,7 +14,7 @@
   var array = [1, 2, 3, 4];
   var models = [];
   for (var i = 0; i < array.length; i++) {
-    if (array.indexOf(array[i]) === i) {
+    if (array.indexOf(array[i]) % 2 === 0) {
       models.push(array[i]);
     }
   }
@@ -60,7 +60,7 @@
  *  What it does:
  *  Like map() it traverses the array from left to right invoking a callback function on each element.
  *  The returned value must be a boolean identifying whether the element will be kept or discarded.
- *  After all the elements have been traveresed filter() returns a new array with all elements that returned true.
+ *  After all the elements have been traversed filter() returns a new array with all elements that returned true.
  *  It has the same parameters as map().
  *
  *  eg. Remove duplicates from an array

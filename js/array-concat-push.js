@@ -11,8 +11,9 @@
  *
  */
 
-  // Array.push() modifies the original array it's pushed to
-  // The return value of the push operation is the length of the returned array.
+// PUSHES ONE ARRAY INTO ANOTHER
+// Array.push() modifies the original array it's pushed to
+// The return value of the push operation is the length of the returned array.
 (function () {
   var testArr = [1, 2, 3];
   var res = testArr.push(4, 5, 6);
@@ -21,7 +22,7 @@
   console.log(testArr); // [1, 2, 3, 4, 5, 6]
 })();
 
-
+// MERGES ARRAYS
 // Array.concat() returns a new array as the result. The original array is unchanged.
 // Gotcha: In the case of objects, instead of copying objects into the new array, the references are copied instead.
 (function () {
@@ -36,6 +37,7 @@
   console.log(concatExample[4]); // 'a'
 })();
 
+// MERGE ARRAY USING push()
 // Clever use of apply() to join 2 arrays
 // Extending a single array with several new arrays using the push.apply method confers a huge performance advantage
 // (~100x) over the simple concat call.

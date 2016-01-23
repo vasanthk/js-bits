@@ -14,9 +14,9 @@
  * - In contrast, the rational number 0.1, which is 1/10, can be written exactly as 0.1 in decimal.
  *
  * @Note:
- * - The best suggestions I’ve seen to handle floating points is to use properly tested libraries like sinfuljs, mathjs or BigDecimal.js for handling them.
+ * - The best suggestions I've seen to handle floating points is to use properly tested libraries like sinfuljs, mathjs or BigDecimal.js for handling them.
  * - Another oft-repeated advice is to use the built-in toPrecision() and toFixed() methods on numbers.
- *   A big warning to anyone thinking of using them – those methods return strings.
+ *   A big warning to anyone thinking of using them -- those methods return strings.
  *
  * @Reference
  * http://stackoverflow.com/questions/1458633/how-to-deal-with-floating-point-number-precision-in-javascript
@@ -26,7 +26,8 @@
 
 (function() {
     console.log(0.1 + 0.2);             // prints 0.30000000000000004
-    console.log((0.1 + 0.2) === 0.3)    // prints false
+    console.log((0.1 + 0.2) === 0.3);    // prints false
 
-    // Workaround: Format your result to some fixed number of significant digits, like this: (Math.floor(y/x) * x).toFixed(2)
+    // Workaround: Format your result to some fixed number of significant digits, like this:
+    // (Math.floor(y/x) * x).toFixed(2) OR parseFloat(a).toFixed(2)
 })();

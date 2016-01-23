@@ -1,4 +1,5 @@
 /**
+ * Method/Function Overloading
  * A way of mapping a single function call to multiple functions based upon the arguments they accept
  *
  * @Reference:
@@ -18,22 +19,20 @@ function addMethod(object, name, fn) {
   // Get the old function corresponding to this name. Will be "undefined"
   // the first time "addMethod" is called.
 
-
   object[name] = function () {
     // Now, assign object[name] to a new function.
     // The critical part of this function is that "old" is captured inside of
     // this function and will be available any time the function is called.
 
-    if (fn.length == arguments.length)
-    // if the number of parameters belonging to the function we've added
-    // matches what was passed in, call "fn"
+    if (fn.length == arguments.length) {
+      // if the number of parameters belonging to the function we've added
+      // matches what was passed in, call "fn"
       return fn.apply(this, arguments);
-
-    else if (typeof old == 'function')
-    // Otherwise if there's another function with this name
-    // call it instead.
+    } else if (typeof old == 'function') {
+      // Otherwise if there's another function with this name
+      // call it instead.
       return old.apply(this, arguments);
-
+    }
   };
 }
 

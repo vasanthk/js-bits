@@ -31,7 +31,7 @@
 
 (function () {
   var ar = [1, 2, 3, 4, 5];
-  // Reduce does not a variable sum in it's outer scope (like in forEach)
+  // Reduce does not have a variable sum in it's outer scope (like in forEach)
   console.log('sum:', ar.reduce(function (sum, v) {
     return sum + v;
   }, 0));

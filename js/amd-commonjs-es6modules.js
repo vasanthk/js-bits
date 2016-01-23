@@ -10,6 +10,7 @@
  *
  * @Reference:
  * http://www.dynamicjavascript.com/amd-and-commonjs-modules-comparison/
+ * http://stackoverflow.com/questions/21021621/difference-between-requirejs-and-commonjs
  * https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules
  * http://javascript.tutorialhorizon.com/2014/09/01/understanding-nodejs-module-exports-and-require/
  * http://www.2ality.com/2014/09/es6-modules-final.html
@@ -27,7 +28,7 @@
  * While in CommonJS you only have the option to export an object, in AMD you can export any JavaScript type.
  * This means you can for example export a constructor function or configuration array.
  * Next to loading modules, AMD is also capable to load other files on demand
- * eg. HTML tenmplates, CSS, Text, JS and Binary files
+ * eg. HTML templates, CSS, Text, JS and Binary files
  *
  * Since AMD modules need to be able to fetch dependencies just-in-time, they need a callback wrapper around a module which produces slightly more overhead in your module definition.
  *

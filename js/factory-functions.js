@@ -49,13 +49,16 @@ $('button').click(sniffles.talk); // Works -- Outputs: 'woof'
 
 
 // Constructor functions vs Factory functions
-//The basic difference is that a constructor function is used with the new keyword (which causes JavaScript to automatically create a new object, set this within the function to that object, and return the object):
 
+// The basic difference is that a constructor function is used with the new keyword
+// (which causes JavaScript to automatically create a new object, set `this` within the function to that object, and return the object):
 var objFromConstructor = new ConstructorFunction();
-// A factory function is called like a "regular" function:
 
+// A factory function is called like a "regular" function:
 var objFromFactory = factoryFunction();
-// But for it to be considered a "factory" it would need to return a new instance of some object: you wouldn't call it a "factory" function if it just returned a boolean or something. This does not happen automatically like with new, but it does allow more flexibility for some cases.
+// But for it to be considered a "factory" it would need to return a new instance of some object:
+// you wouldn't call it a "factory" function if it just returned a boolean or something.
+// This does not happen automatically like with new, but it does allow more flexibility for some cases.
 // In a really simple example the functions referenced above might look something like this:
 
 function ConstructorFunction() {

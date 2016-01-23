@@ -12,4 +12,13 @@
 
   // A trick to clone an object (or copy by value)
   var clonedObj = JSON.parse(JSON.stringify(obj));
+
+  // In ES6
+  var clone = Object.assign({}, obj);
+
+  // With jQuery
+  // Shallow copy
+  var copiedObjShallow = jQuery.extend({}, obj);
+  // Deep copy
+  var copiedObjDeep = jQuery.extend(true, {}, obj)
 })();

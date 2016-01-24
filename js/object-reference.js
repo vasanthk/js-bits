@@ -24,13 +24,16 @@
   } catch (e) {
     console.log(false, "Uh, this isn't good! Where'd ninja.yell go?");
   }
+  // Program 1 doesn't work because inside the ninja.yell function, you are referring to ninja again:
+  // return n > 0 ? ninja.yell(n-1) + "a" : "hiy";
+  // So, if later on your are assigning null to ninja, this code will throw an error because null doesn't have a property yell.
 })();
 
 // Program 2
 (function () {
   var ninja = {
     yell: function yell(n) {  // We are using a named function here, instead of an anonymous fn in Program 1.
-      return n > 0 ? yell(n - 1) + "a" : "hiy";
+      return n > 0 ? yell(n - 1) + "a" : "hiy"; // Calling `yell` instead of `ninja.yell` as in Program 1.
     }
   };
   console.log(ninja.yell(4) == "hiyaaaa");
@@ -43,4 +46,6 @@
   } catch (e) {
     console.log(false, "Uh, this isn't good! Where'd ninja.yell go?");
   }
+  // Program 2 works because, instead of referring to the object that holds the function (ninja),
+  // you are giving the function a name and directly refer to that name.
 })();

@@ -193,7 +193,7 @@ function Book(name) {
   });
 }
 
-var myBook = new Book('Single Pagw Web Applications');
+var myBook = new Book('Single Page Web Applications');
 console.log(myBook.name);    // Book: Single Page Web Applications
 
 // we cannot delete the name property because "configurable" is set to false

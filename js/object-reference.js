@@ -26,17 +26,21 @@
   }
 })();
 
-
 // Program 2
 (function () {
   var ninja = {
-    yell: function yell(n) {
+    yell: function yell(n) {  // We are using a named function here, instead of an anonymous fn in Program 1.
       return n > 0 ? yell(n - 1) + "a" : "hiy";
     }
   };
   console.log(ninja.yell(4) == "hiyaaaa");
 
-  var samurai = {yell: ninja.yell}; ////ninja.yell already assigned before ninja={}
-  var ninja = {}; //
-  console.log(samurai.yell(4) == "hiyaaaa");
+  var samurai = {yell: ninja.yell}; // ninja.yell already assigned before ninja={}
+  var ninja = null;
+
+  try {
+    console.log(samurai.yell(4));
+  } catch (e) {
+    console.log(false, "Uh, this isn't good! Where'd ninja.yell go?");
+  }
 })();

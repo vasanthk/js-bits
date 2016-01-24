@@ -15,16 +15,17 @@
  *
  *   Enumerable: I can access to all of them using a for..in loop. Also, enumerable property keys of an object are returned using Object.keys method.
  *   Writable: I can modify their values, I can update a property just assigning a new value to it: ob.a = 1000;
- *   Configurable: I can modify the behavior of the property, so I can make them non-enumerable, non-writable or even non-configurable if I feel like doing so. Configurable properties are the only ones that can be removed using the delete operator.
+ *   Configurable: If set to false, the properties can't be removed using the delete operator. I can modify the behavior of the property, so I can make them non-enumerable, non-writable or even non-configurable if I feel like doing so.
  *
  *   Object.create() has been available in all browsers since IE9.
  *
  *   @Reference:
  *   http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
  *   http://arqex.com/967/javascript-properties-enumerable-writable-configurable
+ *   http://stackoverflow.com/questions/2709612/using-object-create-instead-of-new
  */
 
-(function() {
+(function () {
 // Object.create.
 // When you first encounter this method, you might wonder why JavaScript needs another way to create objects, when it already has the object literal syntax and constructor functions?
 // Where Object.create differs from those options is that lets you provide, as the first argument to the method, an object that will become the new object’s prototype.
@@ -36,7 +37,7 @@
 // With Object.create, the extra function is no longer required, as the [[Prototype]] can be controlled directly.
 // A dead simple example would be.
 
-  var animal = { legs: 4 };
+  var animal = {legs: 4};
   var dog;
 
   dog = Object.create(animal);
@@ -49,4 +50,42 @@
   console.log(x.prop); // output 3
   x.prop = 5;
   console.log(x.prop); // still output 3, since writable is false
+})();
+
+
+// Traditional constructor usage - `new` keyword.
+(function () {
+  var UserA = function (nameParam) {
+    this.name = nameParam;
+    this.studentYear = 'sophomore';
+  };
+
+  UserA.prototype.sayHello = function () {
+    console.log('Hello ' + this.name);
+  };
+
+  var bob = new UserA('bob');
+  bob.sayHello();
+})();
+
+// With Object.create()
+// http://stackoverflow.com/a/2709811/1672655
+(function () {
+  var userB = {
+    sayHello: function () {
+      console.log('Hello ' + this.name);
+    }
+  };
+
+  // Object.create() lets you initialize object properties using its second argument
+  var bob = Object.create(userB, {
+    'studentYear': {
+      value: 'sophomore',
+      enumerable: true // writable:false, configurable(deletable):false by default
+    },
+    'name': {
+      value: 'Bob',
+      enumerable: true
+    }
+  });
 })();

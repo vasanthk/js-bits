@@ -9,7 +9,7 @@
  * http://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript
  */
 
-// EXAMPLE
+// EXAMPLE 1
 function foo() {
   var bar = 'bar';
 
@@ -21,9 +21,19 @@ function foo() {
 }
 
 function bam(baz) {
+  // Prints 'bar' -- because baz() which is called inside bam's lexical scope has access to `bar` inside foo()
   baz();  // bar
 }
 foo();
+
+// EXAMPLE 2
+function foo() {
+  var bar = 'bar';
+
+  setTimeout(function () {
+    console.log(bar); // Prints `bar` -- Due to closures - coz setTimout's callback fn has access to foo's lexical scope.
+  }, 1000)
+}
 
 
 // PRACTICAL USE CASES

@@ -7,6 +7,8 @@
  *
  * @Reference:
  * http://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript
+ * http://www.bennadel.com/blog/2134-a-random-exploration-of-closure-use-cases-in-javascript.htm
+ * https://medium.com/written-in-code/practical-uses-for-closures-c65640ae7304#.ukk9dpjxs
  */
 
 // EXAMPLE 1

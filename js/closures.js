@@ -1,13 +1,30 @@
 /**
  * Closures
  *
- * Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+ * Closure is when a function 'remembers' its lexical scope even when the function is executing outside that lexical scope. ~ Kyle Simpson
  *
  * Closures are useful in hiding the implementation of functionality while still revealing the interface.
  *
  * @Reference:
  * http://stackoverflow.com/questions/2728278/what-is-a-practical-use-for-a-closure-in-javascript
  */
+
+// EXAMPLE
+function foo() {
+  var bar = 'bar';
+
+  function baz() {
+    console.log(bar);
+  }
+
+  bam(baz);
+}
+
+function bam(baz) {
+  baz();  // bar
+}
+foo();
+
 
 // PRACTICAL USE CASES
 

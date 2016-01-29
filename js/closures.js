@@ -35,6 +35,15 @@ function foo() {
   }, 1000)
 }
 
+// EXAMPLE 3
+function foo() {
+  var bar = 'bar';
+
+  $('#btn').click(function () {
+    console.log(bar); // Prints `bar`
+  });
+}
+
 
 // PRACTICAL USE CASES
 

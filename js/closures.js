@@ -27,27 +27,27 @@ function bam(baz) {
 foo();
 
 // EXAMPLE 2
-function foo() {
+(function foo() {
   var bar = 'bar';
 
   setTimeout(function () {
     console.log(bar); // Prints `bar` -- Due to closures - coz setTimout's callback fn has access to foo's lexical scope.
   }, 1000)
-}
+})();
 
 // EXAMPLE 3
-function foo() {
+(function foo() {
   var bar = 'bar';
 
   $('#btn').click(function () {
     console.log(bar); // Prints `bar`
   });
-}
+})();
 
 
 // PRACTICAL USE CASES
 
-// 1. To enforce public/private methods.
+// 1. To enforce public/private methods. [Classic Module Pattern]
 
 /**
  * As you can see there, a is now an object, with a method publicfunction ( a.publicfunction() ) which calls privatefunction,
@@ -66,6 +66,7 @@ var a = (function () {
     }
   }
 })();
+a.publicFunction(); // Accessed private method.
 
 /**
  * For example, imagine you are writing a class of date utility methods and you want to allow users to lookup

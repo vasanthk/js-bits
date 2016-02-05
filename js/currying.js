@@ -22,7 +22,7 @@
  * http://stackoverflow.com/questions/113780/javascript-curry-what-are-the-practical-applications
  * http://conceptf1.blogspot.com/2014/03/currying-in-javascript.html
  * https://www.youtube.com/watch?v=iZLP4qOwY8I
- *
+ * https://egghead.io/lessons/javascript-what-is-currying
  */
 
 // Simple Greet function -- Non Curried
@@ -116,3 +116,18 @@ function curryIt(fn) {
     }
   }
 }
+
+// ES6 Example
+const one = document.getElementById('one');
+const two = document.getElementById('two');
+const three = document.getElementById('three');
+
+const f = a => b => c => a.addEventListener(b, (event) => {
+  event.target.style.backgroundColor = c;
+});
+
+const oneEventColor = f(one);
+const twoEventColor = f(two);
+
+oneEventColor('mouseover')('blue');
+twoEventColor('mouseout')('green');

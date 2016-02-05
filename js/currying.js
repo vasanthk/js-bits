@@ -14,6 +14,7 @@
  *
  * @Reference:
  * http://www.sitepoint.com/currying-in-functional-javascript/
+ * http://www.2ality.com/2011/09/currying-vs-part-eval.html
  * https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe#.nhp2e7pcm
  * https://medium.com/@kevincennis/currying-in-javascript-c66080543528#.bnk4cy1m0
  * http://raganwald.com/2013/03/07/currying-and-partial-application.html

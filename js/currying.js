@@ -55,6 +55,7 @@ greetCurried("Hi there")("Vasa"); //"Hi there, Vasa"
 // To address that problem, one approach is to create a quick and dirty currying function that will take the name of an existing function that was written without all the nested returns.
 // A currying function would need to pull out the list of arguments for that function, and use those to return a curried version of the original function:
 
+// Partial Application -- Few arguments passed initially + allowing more args to be passed later on.
 function curryIt(uncurriedFn) {
   var parameters = Array.prototype.slice.call(arguments, 1);  // Omit 0th argument (which is the uncurriedFn and start from index 1)
   return function () {
@@ -86,4 +87,31 @@ function curryIt(fn) {
       return next.apply(null, local);
     };
   }());
+}
+
+// EXAMPLE
+var l = 2, b = 3, h = 4;
+var curriedVol = curryIt(vol);
+var area = curriedVol(l)(b);
+var volume = area(h);
+console.log('Volume: ', volume);
+
+function vol(l, b, h) {
+  return l * b * h;
+}
+
+// My version -- It worked in the first run :)
+function curryIt(fn) {
+  var arity = fn.length;
+  var params = [];
+  return function handler() {
+    var args = Array.prototype.slice.call(arguments);
+    Array.prototype.push.apply(params, args); // OR params.push.apply(this, args);
+
+    if (params.length === arity) {
+      return fn.apply(this, params);
+    } else {
+      return handler;
+    }
+  }
 }

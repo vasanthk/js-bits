@@ -5,7 +5,7 @@
  *
  * Gotcha:
  * If the frozen object has values that are objects, they can still be modified, unless they are frozen as well.
- * The feeze is shallow.
+ * The freeze is shallow.
  *
  * @Reference:
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
@@ -53,12 +53,13 @@ function deepFreeze(obj) {
   var propNames = Object.getOwnPropertyNames(obj);
 
   // Freeze properties before freezing self
-  propNames.forEach(function(name) {
+  propNames.forEach(function (name) {
     var prop = obj[name];
 
     // Freeze prop if it is an object
-    if (typeof prop == 'object' && prop !== null && !Object.isFrozen(prop))
+    if (typeof prop == 'object' && prop !== null && !Object.isFrozen(prop)) {
       deepFreeze(prop);
+    }
   });
 
   // Freeze self
@@ -72,4 +73,4 @@ var obj2 = {
 
 deepFreeze(obj2);
 obj2.internal.a = 'anotherValue';
-obj2.internal.a; // undefined
+console.log(obj2.internal.a); // undefined

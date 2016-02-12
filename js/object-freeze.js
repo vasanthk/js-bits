@@ -5,7 +5,7 @@
  *
  * Gotcha:
  * If the frozen object has values that are objects, they can still be modified, unless they are frozen as well.
- * The freeze is shallow.
+ * The freeze is SHALLOW.
  *
  * @Reference:
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
@@ -32,6 +32,8 @@ console.log(Object.isFrozen(obj) === true); // True
 // Now any changes will fail (throw errors in strict mode).
 obj.foo = 'quux'; // silently does nothing
 obj.quaxxor = 'the friendly duck'; // silently doesn't add the property
+
+
 
 /**
  * Freeze is shallow.

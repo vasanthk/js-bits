@@ -36,3 +36,21 @@ element.onclick = function (event) {
 // The handler is set on the capturing phase.
 // phase = false
 
+// The default browser action
+
+// 1) Event special method event.preventDefault() for W3C-compliant browsers and event.returnValue = false for IE<9.
+// Or, in a single line:
+event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+
+// 2) Return false from the handler
+element.onclick = function (event) {
+  return false;
+};
+
+// Note: Bubbling and default action
+// Browser default action is independent from bubbling.
+// Cancelling default action does not stop bubbling and vise versa.
+// However, jQuery has it’s own event-handling layer. It wraps over the handler,
+// and if the handler returns false, then both bubbling is stopped and the default action is prevented.
+
+

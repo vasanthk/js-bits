@@ -4,6 +4,7 @@
  * @Reference:
  * http://javascript.info/tutorial/bubbling-and-capturing
  * http://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
+ * http://javascript.info/tutorial/mouse-events
  *
  */
 
@@ -53,4 +54,7 @@ element.onclick = function (event) {
 // However, jQuery has it’s own event-handling layer. It wraps over the handler,
 // and if the handler returns false, then both bubbling is stopped and the default action is prevented.
 
-
+// Sample Events
+document.getElementById('btn').onclick(alert('Works')); // Triggered by a mouse click: mousedown and then mouseup over an element
+document.getElementById('btn').oncontextmenu(alert('Works')); // Triggered by a right-button mouse click over an element.
+document.getElementById('btn').dblclick(alert('Works'));  // Triggered by two clicks within a short time over an element

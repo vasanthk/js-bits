@@ -153,4 +153,20 @@ silentActor.isEmployed = false;
 // So now...
 busterKeaton.isEmployed; // false
 
+// Setting up Multiple inheritance using the `new` keyword
+// Set up Actor
+function Actor() {}
+Actor.prototype.canAct = true;
+
+// Set up SilentActor to inherit from Actor:
+function SilentActor() {}
+SilentActor.prototype = Object.create(Actor.prototype);
+
+// We can now add new properties to the SilentActor prototype:
+SilentActor.prototype.canSpeak = false;
+
+// So instances can act, but can't speak:
+var charlie = new SilentActor();
+charlie.canAct; // true
+charlie.canSpeak; // false
 

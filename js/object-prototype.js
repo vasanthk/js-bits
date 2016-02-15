@@ -144,4 +144,13 @@ Object.getPrototypeOf(busterKeaton); // silentActor
 Object.getPrototypeOf(silentActor); // actor
 Object.getPrototypeOf(actor); // Object
 
+// Modifying the chain
+
+// The interesting thing is that the ‘actor’ and ‘silentActor’ objects are still live in the system and can be modified at runtime.
+// So, for a contrived example, if all silect actors lost their jobs, we could do the following:
+silentActor.isEmployed = false;
+
+// So now...
+busterKeaton.isEmployed; // false
+
 

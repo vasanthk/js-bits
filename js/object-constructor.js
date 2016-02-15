@@ -9,11 +9,11 @@
  * http://stackoverflow.com/a/14172862/1672655
  */
 
-//Object Data Properties Have Attributes
-//Each data property (object property that store data) has not only the name-value pair, but also 3 attributes (the three attributes are set to true by default):
-//—  Configurable Attribute: Specifies whether the property can be deleted or changed.
-//— Enumerable: Specifies whether the property can be returned in a for/in loop.
-//— Writable: Specifies whether the property can be changed.
+// Object Data Properties Have Attributes
+// Each data property (object property that store data) has not only the name-value pair, but also 3 attributes (the three attributes are set to true by default):
+//—  Configurable: If false, any attempts to delete the property or change its attributes (Writable, Configurable, or Enumerable) will fail.
+//— Enumerable: If true, the property will be iterated over when a user does for (var prop in obj){} (or similar).
+//— Writable: If false, the value of the property can not be changed.
 
 
 // Constructor Pattern for Creating Objects

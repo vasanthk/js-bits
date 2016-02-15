@@ -3,7 +3,7 @@
  * An object is an unordered list of primitive data types (and sometimes reference data types) that is stored as a series of name-value pairs.
  * Each item in the list is called a property (functions are called methods).
  *
- * @Referenc:
+ * @Reference:
  * http://javascriptissexy.com/javascript-objects-in-detail/
  * https://css-tricks.com/understanding-javascript-constructors/
  * http://stackoverflow.com/a/14172862/1672655

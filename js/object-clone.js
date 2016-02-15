@@ -22,7 +22,7 @@
   // Shallow copy
   var copiedObjShallow = jQuery.extend({}, obj);
   // Deep copy
-  var copiedObjDeep = jQuery.extend(true, {}, obj)
+  var copiedObjDeep = jQuery.extend(true, {}, obj);
 
   // Object.assign() polyfill
   // http://stackoverflow.com/a/34283281/1672655

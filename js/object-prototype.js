@@ -124,3 +124,24 @@ var userAccount = new Account ();
 // userAccount initialized with the Account () constructor and as such its prototype attribute (or prototype object) is Account.prototype.
 
 
+// Prototype chain - Simulating multiple inheritance
+// @Reference: http://markdalgleish.com/2012/10/a-touch-of-class-inheritance-in-javascript/
+
+// Our 'actor' object has some properties...
+var actor = {
+  canAct: true,
+  canSpeak: true
+};
+
+// 'silentActor' inherits from 'actor'
+var silentActor = Object.create(actor);
+silentActor.canSpeak = false;
+
+// 'busterKeaton' inherits from 'silentActor'
+var busterKeaton = Object.create(silentActor);
+
+Object.getPrototypeOf(busterKeaton); // silentActor
+Object.getPrototypeOf(silentActor); // actor
+Object.getPrototypeOf(actor); // Object
+
+

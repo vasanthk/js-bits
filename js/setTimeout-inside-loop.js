@@ -1,7 +1,7 @@
 /**
- * setTimout() inside a for() loop.
+ * setTimeout() inside a for() loop.
  *
- * @TLDR: setTimout is executed after the loop is done, if the time it take to loop is less than the timout value.
+ * @TLDR: setTimeout is executed after the loop is done, if the time it take to loop is less than the timout value.
  *  Also, it accesses the looping variable value only at the time of execution after the timout.
  *
  * @Info: Use an IIFE to lock the looping varaible within for each iteration of the loop inside a closure/
@@ -12,7 +12,7 @@
 
 (function () {
 
-    // setTimout() inside a loop.
+    // setTimeout() inside a loop.
     for (var i = 1; i <= 3; i++) {
         setTimeout(function () {
             console.log(index);     // prints 3 3 3
@@ -28,9 +28,9 @@
         })(i);
     }
 
-    // Note: When the IIFE is inside the setTimout, it prints the corrct values.
+    // Note: When the IIFE is inside the setTimeout, it prints the corrct values.
     // However, the values are printed immediately and not after the timout value.
-    // Essentially rendering the setTimout useless.
+    // Essentially rendering the setTimeout useless.
     // setTimeout() needs a fn as it's 1st parameter.
     for (var i = 1; i <= 3; i++) {
         setTimeout((function (index) {
@@ -38,7 +38,7 @@
         })(i), 1000);
     }
 
-    // You can still use and IIFE inside setTimout(), but you need to return a function as it's first parameter.
+    // You can still use and IIFE inside setTimeout(), but you need to return a function as it's first parameter.
     for (var i = 1; i <= 3; i++) {
         setTimeout((function (index) {
             return function () {

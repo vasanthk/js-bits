@@ -182,6 +182,8 @@ export function foo() {};               // export a named function
 export default 42;                      // export the default export
 export default function foo() {};       // export the default export as a function
 
+var encrypt = {};
+var decrypt = {};
 export { encrypt };                     // export an existing variable
 export { decrypt as dec };              // export a variable as a new name
 export { encrypt as en } from 'crypto'; // export an export from another module

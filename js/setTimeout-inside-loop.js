@@ -12,39 +12,48 @@
 
 (function () {
 
-    // setTimeout() inside a loop.
-    for (var i = 1; i <= 3; i++) {
-        setTimeout(function () {
-            console.log(index);     // prints 3 3 3
-        }, 1000);
-    }
+  // setTimeout() inside a loop.
+  for (var i = 1; i <= 3; i++) {
+    setTimeout(function () {
+      console.log(index);     // prints 3 3 3
+    }, 1000);
+  }
 
-    // Locking the looped values inside a IIFE (closure).
-    for (var i = 1; i <= 3; i++) {
-        (function (index) {
-            setTimeout(function () {
-                console.log(index);     // prints 1 2 3
-            }, 1000);
-        })(i);
-    }
+  // Locking the looped values inside a IIFE (closure).
+  for (var i = 1; i <= 3; i++) {
+    (function (index) {
+      setTimeout(function () {
+        console.log(index);     // prints 1 2 3
+      }, 1000);
+    })(i);
+  }
 
-    // Note: When the IIFE is inside the setTimeout, it prints the corrct values.
-    // However, the values are printed immediately and not after the timout value.
-    // Essentially rendering the setTimeout useless.
-    // setTimeout() needs a fn as it's 1st parameter.
-    for (var i = 1; i <= 3; i++) {
-        setTimeout((function (index) {
-            console.log(index);         // prints 1 2 3
-        })(i), 1000);
-    }
+  // Note: When the IIFE is inside the setTimeout, it prints the corrct values.
+  // However, the values are printed immediately and not after the timout value.
+  // Essentially rendering the setTimeout useless.
+  // setTimeout() needs a fn as it's 1st parameter.
+  for (var i = 1; i <= 3; i++) {
+    setTimeout((function (index) {
+      console.log(index);         // prints 1 2 3
+    })(i), 1000);
+  }
 
-    // You can still use and IIFE inside setTimeout(), but you need to return a function as it's first parameter.
-    for (var i = 1; i <= 3; i++) {
-        setTimeout((function (index) {
-            return function () {
-                console.log(index);     // prints 1 2 3
-            };  // IIFE needs to return a function that setTimeout can schedule.
-        })(i), 1000);
-    }
+  // You can still use and IIFE inside setTimeout(), but you need to return a function as it's first parameter.
+  for (var i = 1; i <= 3; i++) {
+    setTimeout((function (index) {
+      return function () {
+        console.log(index);     // prints 1 2 3
+      };  // IIFE needs to return a function that setTimeout can schedule.
+    })(i), 1000);
+  }
+
+  // Note: Both setTimeout and setInterval accept and additional params that can be passed to the callback fn.
+  // Thanks: https://twitter.com/WebReflection/status/701091345679708161
+  for (var i = 0; i < 10; i++) {
+    setTimeout(function (i) {
+      console.log(i);
+      // This will print 0 1 2 3 4 5 6 7 8 9
+    }, 1000, i)
+  }
 
 })();

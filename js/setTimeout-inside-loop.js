@@ -1,10 +1,10 @@
 /**
  * setTimeout() inside a for() loop.
  *
- * @TLDR: setTimeout is executed after the loop is done, if the time it take to loop is less than the timout value.
+ * @TLDR: setTimeout is executed after the loop is done, if the time it take to loop is less than the timeout value.
  *  Also, it accesses the looping variable value only at the time of execution after the timout.
  *
- * @Info: Use an IIFE to lock the looping varaible within for each iteration of the loop inside a closure/
+ * @Info: Use an IIFE to lock the looping variable within for each iteration of the loop inside a closure/
  *
  * @Reference: Best explanation out there on Event loops: https://www.youtube.com/watch?v=8aGhZQkoFbQ
  *

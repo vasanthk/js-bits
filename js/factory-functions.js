@@ -33,7 +33,7 @@ $('button').click(() => sniffles.talk());
 
 
 
-// Factory fucntions
+// Factory functions
 const dog = () => {
   const sound = 'woof';
   return {

@@ -30,7 +30,8 @@
  * Next to loading modules, AMD is also capable to load other files on demand
  * eg. HTML templates, CSS, Text, JS and Binary files
  *
- * Since AMD modules need to be able to fetch dependencies just-in-time, they need a callback wrapper around a module which produces slightly more overhead in your module definition.
+ * Since AMD modules need to be able to fetch dependencies just-in-time, they need a callback wrapper around a module
+ * which produces slightly more overhead in your module definition.
  *
  * Multiple modules can be loaded in parallel.
  * Asynchronous loading is a complex subject and it can easily create race conditions if not properly designed.
@@ -38,7 +39,8 @@
  *
  * How To Use:
  * Your module will publicly expose whatever is being returned on the callback function.
- * In order to use your module, the client code needs to refer to it (per file location or alias) on its dependencies array, which will map to an argument on its own callback function.
+ * In order to use your module, the client code needs to refer to it (per file location or alias) on its dependencies array,
+ * which will map to an argument on its own callback function.
  *
  */
 
@@ -139,8 +141,8 @@ define(function (require, exports, module) {
 /**
  * ES6 Modules
  *
- * ES6 modules will support both synchronous and asynchronous loading within the same syntax. And even better, they will work both on the browser and on the server.
- *
+ * ES6 modules will support both synchronous and asynchronous loading within the same syntax.
+ * And even better, they will work both on the browser and on the server.
  */
 
 // EXPORTING

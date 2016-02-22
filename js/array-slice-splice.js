@@ -18,6 +18,8 @@
  * http://www.tothenew.com/blog/javascript-splice-vs-slice/
  */
 
+// Array.splice()
+// Format: array.splice(start, deleteCount[, item1[, item2[, ...]]])
 var array = [1, 2, 3, 4, 5];
 console.log(array.splice(2));
 // shows [3, 4, 5], returned removed item(s) as a new array object.
@@ -64,7 +66,7 @@ console.log(array5);
 // shows ["NaN is Treated as 0",25]
 
 
-// If Argument(2) is less than 0 or equal to NaN, it is treated as if it were 0.
+// If 2nd argument is less than 0 or equal to NaN, it is treated as if it were 0.
 var array6 = [26, 27, 28, 29, 30];
 console.log(array6.splice(2, -5, "Hello"));
 // shows []
@@ -94,7 +96,13 @@ console.log(array7);
 // shows [31,32,"Add Me Too"]
 
 
-//  The slice() method can take 2 arguments:
+// The slice() method can take 2 arguments:
+// arr.slice([begin[, end]])
+// slice extracts up to but not including end argument.
+var fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+var citrus = fruits.slice(1, 3);
+// citrus contains ['Orange','Lemon']
+
 var array = [1, 2, 3, 4, 5];
 console.log(array.slice(2));
 // shows [3, 4, 5], returned selected element(s).

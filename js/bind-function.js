@@ -5,6 +5,7 @@
  *
  * @Reference:
  * https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/
+ * http://stackoverflow.com/a/10115970/1672655
  * http://ejohn.org/apps/learn/#86
  */
 
@@ -65,8 +66,30 @@ var myObj = {
 
 // Use Cases
 //
-// Anywhere with callback functions - eg. Click handlers, setTimeout etc.
+// 1) Anywhere with callback functions - eg. Click handlers, setTimeout etc.
 // With bind(), the `this` context is available when the callback fn is called later on.
+var Button = function (content) {
+  this.content = content;
+};
+
+Button.prototype.click = function () {
+  console.log(this.content + ' clicked');
+};
+
+var myButton = new Button('OK');
+myButton.click();
+
+var looseClick = myButton.click;
+looseClick(); // not bound, 'this' is not myButton - it is the global object
+
+var boundClick = myButton.click.bind(myButton);
+boundClick(); // bound, 'this' is myButton
+// Which prints out:
+// OK clicked
+// undefined clicked
+// OK clicked
+
+
 // One use is to track clicks (or to perform an action after a click) that might require us to store information in an object, like so:
 var logger = {
   x: 0,
@@ -79,3 +102,17 @@ var logger = {
 document.querySelector('button').addEventListener('click', function () {
   logger.updateCount();
 });
+
+// Use Cases
+//
+// 2) For Partial Application
+// You can also add extra parameters after the 1st parameter and bind will pass in those values to the original function
+// before passing in the extra parameters you pass to the bound function:
+
+// Example showing binding some parameters
+var sum = function (a, b) {
+  return a + b;
+};
+
+var add5 = sum.bind(null, 5);
+console.log(add5(10));  // 15

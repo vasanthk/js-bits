@@ -45,11 +45,14 @@ console.log('zfrs', a>>>b); // 0
 var hex = 'ffaadd';
 var rgb = parseInt(hex, 16);    // value is 1675421
 
+// & 0xFF ensures that if bytes are longer than 8 bits, the rest of the bits are cleared.
+// http://stackoverflow.com/a/14713134/1672655
 var red   = (rgb >> 16) & 0xFF; // returns 255
 var green = (rgb >> 8) & 0xFF;  // 170
 var blue  = rgb & 0xFF;         // 221
 
-// In JavaScript, you can use a double bitwise negation (~~n) as a replacement for Math.floor(n) (if n is a positive number) or parseInt(n, 10) (even if n is negative). n|n and n&n always yield the same results as ~~n.
+// In JavaScript, you can use a double bitwise negation (~~n) as a replacement for Math.floor(n)
+// (if n is a positive number) or parseInt(n, 10) (even if n is negative). n|n and n&n always yield the same results as ~~n.
 var n = Math.PI;
 n; // 3.141592653589793
 Math.floor(n); // 3

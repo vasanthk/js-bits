@@ -2,15 +2,22 @@
  * How does JavaScript .prototype work?
  *
  * Every JavaScript object has an internal property called [[Prototype]].
- * If you look up a property via obj.propName or obj['propName'] and the object does not have such a property - which can be checked via obj.hasOwnProperty('propName') - the runtime looks up the property in the object referenced by [[Prototype]] instead.
- * If the prototype-object also doesn't have such a property, its prototype is checked in turn, thus walking the original object's prototype-chain until a match is found or its end is reached with Object.prototype.
+ * If you look up a property via obj.propName or obj['propName'] and the object does not have such a property -
+ * which can be checked via obj.hasOwnProperty('propName') - the runtime looks up the property in the object referenced by [[Prototype]] instead.
+ * If the prototype-object also doesn't have such a property, its prototype is checked in turn,
+ * thus walking the original object's prototype-chain until a match is found or its end is reached with Object.prototype.
  *
  * Some JavaScript implementations allow direct access to the [[Prototype]] property, eg via a non-standard property named __proto__.
- * In general, it's only possible to set an object's prototype during object creation: If you create a new object via new Func(), the object's [[Prototype]] property will be set to the object referenced by Func.prototype.
+ * In general, it's only possible to set an object's prototype during object creation:
+ * If you create a new object via new Func(), the object's [[Prototype]] property will be set to the object referenced by Func.prototype.
  * This allows to simulate classes in JavaScript, although JavaScript's inheritance system is - as we have seen - prototypical, and not class-based:
  *
- * Just think of constructor functions as classes and the properties of the prototype (ie of the object referenced by the constructor function's prototype property) as shared members, ie members which are the same for each instance.
- * In class-based systems, methods are implemented the same way for each instance, so methods are normally added to the prototype, whereas an object's fields are instance-specific and therefore added to the object itself during construction.
+ * Just think of constructor functions as classes and the properties of the prototype
+ * (ie of the object referenced by the constructor function's prototype property) as shared members,
+ * ie members which are the same for each instance.
+ * In class-based systems, methods are implemented the same way for each instance,
+ * so methods are normally added to the prototype, whereas an object's fields are instance-specific and therefore
+ * added to the object itself during construction.
  *
  *  Two different things can be called "prototype":
  *    the prototype property, as in obj.prototype
@@ -103,7 +110,8 @@ newObj.print (); //I am a new Object and I can print.
 // Think of the prototype attribute as a characteristic of the object; this characteristic tells us the object’s “parent”.
 // In simple terms: An object’s prototype attribute points to the object’s “parent”—the object it inherited its properties from.
 // The prototype attribute is normally referred to as the prototype object, and it is set automatically when you create a new object.
-// Every object inherits properties from some other object, and it is this other object that is the object’s prototype attribute or “parent.” (You can think of the prototype attribute as the lineage or the parent).
+// Every object inherits properties from some other object, and it is this other object that is the object’s prototype attribute or “parent.”
+// (You can think of the prototype attribute as the lineage or the parent).
 
 
 // Prototype Attribute of Objects Created with new Object () or Object Literal

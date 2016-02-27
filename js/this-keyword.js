@@ -1,8 +1,11 @@
 /**
+ * The elusive `this` keyword in JS
+ *
  * @Reference:
  * http://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work
  * http://stackoverflow.com/a/33979892/1672655
  * http://stackoverflow.com/a/17514482/1672655
+ * http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
  */
 
 // 1. Global this

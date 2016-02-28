@@ -41,7 +41,7 @@ console.log('ls', a << b); // 40960
 console.log('zfrs', a >>> b); // 0
 
 
-// Practical Use case of Bitwise operators in JavaScript
+// Practical Use cases of Bitwise operators in JavaScript
 var hex = 'ffaadd';
 var rgb = parseInt(hex, 16);    // value is 1675421
 
@@ -73,3 +73,13 @@ Math.floor(-n); // -4
 // To check dec number's binary value, we use .toString() method with base argument - '2' for binary
 var number = 5;
 console.log(number.toString(2));  // 101
+
+// Swap variables (Using XOR)
+// details: http://en.wikipedia.org/wiki/XOR_swap_algorithm
+var a = 73;
+var b = 89;
+a^=b;
+b^=a;
+a^=b;
+console.log('a', a);
+console.log('b', b);

@@ -131,3 +131,16 @@ const twoEventColor = f(two);
 
 oneEventColor('mouseover')('blue');
 twoEventColor('mouseout')('green');
+
+function add() {
+  var s = [].reduce.call(arguments, function (sum, curr) {
+    return sum + curr;
+  });
+  var f = function () {
+    return add.apply(0, [s].concat([].slice.call(arguments)))
+  };
+  f.valueOf = function () {
+    return s
+  };
+  return f;
+}

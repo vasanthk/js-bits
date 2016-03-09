@@ -1,5 +1,6 @@
 #JS Bits
 JavaScript concepts explained with proper code samples.
+
 Community contributions welcome :)
 
 * [AMD CommonJS and ES6 Modules Usage](js/amd-commonjs-es6modules.js)

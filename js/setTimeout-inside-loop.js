@@ -15,7 +15,14 @@
   // setTimeout() inside a loop.
   for (var i = 1; i <= 3; i++) {
     setTimeout(function () {
-      console.log(index);     // prints 3 3 3
+      console.log(i);     // prints 4 4 4
+    }, 1000);
+  }
+
+  // Work all fine if we use `let` keyword in ES6
+  for (let i = 1; i <= 3; i++) {
+    setTimeout(function () {
+      console.log(i);     // prints 1 2 3
     }, 1000);
   }
 

@@ -91,4 +91,4 @@ var lastName = "Shalygin";
 var ID = 12321312;
 //Usage: firstName.concat(string2, string 3, string 3, ...);
 var fullIdentification = firstName.concat(lastName, ":", ID);
-console.log(fullIdentification);
+console.log(fullIdentification); //OlegShalygin:12321312

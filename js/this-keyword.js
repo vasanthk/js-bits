@@ -6,6 +6,8 @@
  * http://stackoverflow.com/a/33979892/1672655
  * http://stackoverflow.com/a/17514482/1672655
  * http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
+ * http://www.sitepoint.com/mastering-javascripts-this-keyword/
+ * http://www.quirksmode.org/js/this.html
  */
 
 // 1. Global this

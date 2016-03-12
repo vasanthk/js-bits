@@ -3,7 +3,12 @@
  *
  * @Reference:
  * http://danmartensen.svbtle.com/javascripts-map-reduce-and-filter
- * Advanced: Implementing filter, map, reduce internals in JS: http://matthewodette.com/map-filter-and-fold-in-javascript/
+ * http://elijahmanor.com/reducing-filter-and-map-down-to-reduce/
+ * http://cryto.net/~joepie91/blog/2015/05/04/functional-programming-in-javascript-map-filter-reduce/
+ *
+ * Advanced:
+ * Implementing filter, map, reduce internals in JS:
+ * http://matthewodette.com/map-filter-and-fold-in-javascript/
  */
 
 /** Normal for() loop

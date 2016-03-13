@@ -1,5 +1,5 @@
 #JS Bits
-JavaScript concepts explained with proper code samples.
+JavaScript concepts explained with code.
 
 Community contributions welcome :)
 

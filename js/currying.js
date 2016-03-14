@@ -132,6 +132,9 @@ const twoEventColor = f(two);
 oneEventColor('mouseover')('blue');
 twoEventColor('mouseout')('green');
 
+// Currying challenge:
+// https://github.com/frantic/friday/blob/master/currying.js
+// http://blog.vjeux.com/2015/javascript/140byt-es-curried-add-function.html
 function add() {
   var s = [].reduce.call(arguments, function (sum, curr) {
     return sum + curr;

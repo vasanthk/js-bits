@@ -253,3 +253,18 @@ var form = document.forms.temp;
 var select = form.elements.genre;
 var value = select.options[select.selectedIndex].value;
 alert(value); // blues
+
+// To find the elements we use:
+
+ document.getElementById("IDName") - Selects the first element with the ID passed. How ID's should be used once in a HTML, it selects the first element,
+                                      if the ID is duplicated, it selects the first one.
+                                      
+  document.getElementsByClassName("ClassName") - Selects the elements with the Class name passed. It returns an array with the elements.
+  
+  document.getElementsByName("Name") - Selects the elements with the Name passed, returns an array with the elements.
+  
+  document.getElementsByTagName("TagName") - Selects the elements with the passed Tag, returns an array with the elements
+  
+  document.querySelector("#IDName or .ClassName") - Selects the first one element that it finds with the passed name and type.
+  
+  document.querySelectorAll("#IDName or .ClassName") - Selects all the element that it finds with the passed name and type. It returns an array

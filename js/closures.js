@@ -10,6 +10,7 @@
  * http://www.bennadel.com/blog/2134-a-random-exploration-of-closure-use-cases-in-javascript.htm
  * https://medium.com/written-in-code/practical-uses-for-closures-c65640ae7304#.ukk9dpjxs
  * https://medium.com/@nickbalestra/javascripts-lexical-scope-hoisting-and-closures-without-mystery-c2324681d4be#.bg7fk0chp
+ * https://www.safaribooksonline.com/library/view/javascript-the-good/9780596517748/ch04s15.html
  */
 
 // EXAMPLE 1
@@ -92,3 +93,40 @@ var dateUtil = {
     };
   }())
 };
+
+// 2. To create memoizers.
+
+/**
+ * You've probably heard of or even implemented the Fibonacci series function a couple of times.
+ *
+ * Closures can turn a simple Fibonacci function into a masterpiece.
+ *
+ * We are going to start with a classic Fibonacci implementation.
+ */
+var fibonacci = function (n) {
+  return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+};
+
+/**
+ * This one works fine but is awfully slow. It's computing the same value several times.
+ *
+ * We can use a memoizer (a closure) to save each computed value for future uses.
+ */
+var fibonacci = (function (  ) {
+  var memo = [0, 1];
+  var fib = function (n) {
+    var result = memo[n];
+    if (typeof result !== 'number') {
+      result = fib(n - 1) + fib(n - 2);
+      memo[n] = result;
+    }
+    return result;
+  };
+  return fib;
+}( ));
+
+console.log(fibonacci(100));
+/**
+ * Check Crockford's (book)[https://www.safaribooksonline.com/library/view/javascript-the-good/9780596517748/ch04s15.html "Safari Books Online"]
+ * to find a way to generalize this function into one that memoizes other recursive functions.
+ */

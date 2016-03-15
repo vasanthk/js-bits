@@ -7,6 +7,7 @@
  * @Reference:
  * http://javascript.info/tutorial/dom
  * http://www.quirksmode.org/dom/
+ * http://domenlightenment.com/
  */
 
 // BASIC ELEMENT SELECTORS

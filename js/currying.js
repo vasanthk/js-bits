@@ -23,6 +23,7 @@
  * http://conceptf1.blogspot.com/2014/03/currying-in-javascript.html
  * https://www.youtube.com/watch?v=iZLP4qOwY8I
  * https://egghead.io/lessons/javascript-what-is-currying
+ * https://hughfdjackson.com/javascript/why-curry-helps/
  */
 
 // Simple Greet function -- Non Curried

@@ -4,10 +4,25 @@
  * @Reference:
  * http://javascript.info/tutorial/view-and-position
  * http://stackoverflow.com/a/21064102/1672655
+ * https://developer.mozilla.org/en/docs/Web/API/Element/classList
  */
 
 // className
 document.body.className += ' class3';
+
+// classList
+
+document.body.classList.add('class1', 'class2');
+
+if (document.body.classList.contains('class1') === true) {
+    document.body.classList.remove('class1');
+}
+
+var i;
+
+for (i = 0; i < document.body.classList.length; i++) {
+    console.log(i, document.body.classList.item(i));
+}
 
 // style
 document.body.style.backgroundColor = 'green';

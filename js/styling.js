@@ -12,16 +12,17 @@ document.body.className += ' class3';
 
 // classList
 
-document.body.classList.add('class1', 'class2');
+var classList = document.body.classList,    // returns *live* DOMTokenList collection
+    i;
 
-if (document.body.classList.contains('class1') === true) {
-    document.body.classList.remove('class1');
+classList.add('class1', 'class2');
+
+if (classList.contains('class1') === true) {
+    classList.remove('class1');
 }
 
-var i;
-
-for (i = 0; i < document.body.classList.length; i++) {
-    console.log(i, document.body.classList.item(i));
+for (i = 0; i < classList.length; i++) {
+    console.log(i, classList.item(i));
 }
 
 // style

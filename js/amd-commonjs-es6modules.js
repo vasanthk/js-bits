@@ -9,7 +9,6 @@
  * AMD vs CommonJS vs ES6 Modules
  *
  * @Reference:
- * http://www.dynamicjavascript.com/amd-and-commonjs-modules-comparison/
  * http://stackoverflow.com/questions/21021621/difference-between-requirejs-and-commonjs
  * https://www.airpair.com/javascript/posts/the-mind-boggling-universe-of-javascript-modules
  * http://javascript.tutorialhorizon.com/2014/09/01/understanding-nodejs-module-exports-and-require/

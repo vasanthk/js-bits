@@ -15,6 +15,7 @@
  * http://raganwald.com/2014/04/10/mixins-forwarding-delegation.html
  * http://bob.yexley.net/dry-javascript-with-mixins/
  * https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.osy5v7ih0
+ * http://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript
  */
 
 // build a mixin function to take a target that receives the mixin,
@@ -47,8 +48,63 @@ function mixInto(target, source, methodNames) {
 
 }
 
-
 // make use of the mixin function
 var myApp = new Marionette.Application();
 mixInto(myApp, Marionette.EventBinder, "bindTo", "unbindFrom", "unbindAll");
 
+
+/**
+ * Mixin Design Pattern
+ *
+ * Link: http://jsfiddle.net/quFa9/21/
+ */
+
+// Detailed explanation of Mixin Design Pattern in JavaScript can be found here: http://addyosmani.com/resources/essentialjsdesignpatterns/book/#mixinpatternjavascript
+
+/* Car Class */
+var Car = function (settings) {
+  this.model = settings.model || 'no model provided';
+  this.colour = settings.colour || 'no colour provided';
+};
+
+/* Mixin Class */
+var Mixin = function () { };
+Mixin.prototype = {
+  driveForward: function () {
+    console.log('drive forward');
+  },
+  driveBackward: function () {
+    console.log('drive backward');
+  }
+};
+
+/* Augment existing class with a method from another class */
+function augment(receivingClass, givingClass) {
+  /* only provide certain methods */
+  if (arguments[2]) {
+    var i, len = arguments.length;
+    for (i = 2; i < len; i++) {
+      receivingClass.prototype[arguments[i]] = givingClass.prototype[arguments[i]];
+    }
+  }
+  /* provide all methods */
+  else {
+    var methodName;
+    for (methodName in givingClass.prototype) {
+      /* check to make sure the receiving class doesn't have a method of the same name as the one currently being processed */
+      if (!receivingClass.prototype[methodName]) {
+        receivingClass.prototype[methodName] = givingClass.prototype[methodName];
+      }
+    }
+  }
+}
+
+/* Augment the Car class to have the methods 'driveForward' and 'driveBackward' */
+augment(Car, Mixin, 'driveForward', 'driveBackward');
+
+/* Create a new Car */
+var vehicle = new Car({model: 'Ford Escort', colour: 'blue'});
+
+/* Test to make sure we now have access to the methods */
+vehicle.driveForward();
+vehicle.driveBackward();

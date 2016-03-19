@@ -5,10 +5,11 @@
  * Reference:
  * http://gunnariauvinen.com/difference-between-concat-and-push-in-javascript/
  * http://davidwalsh.name/combining-js-arrays
- * https://jsperf.com/array-prototype-push-apply-vs-concat/13
  *
  * Tip: push() adds elements to the end of the array. To add it to the beginning, use unshift()
  *
+ * Perf comparison:
+ * https://jsperf.com/array-prototype-push-apply-vs-concat/20
  */
 
 // PUSHES ONE ARRAY INTO ANOTHER
@@ -39,8 +40,6 @@
 
 // MERGE ARRAY USING push()
 // Clever use of apply() to join 2 arrays
-// Extending a single array with several new arrays using the push.apply method confers a huge performance advantage
-// (~100x) over the simple concat call.
 (function () {
   var a = [1, 2];
   var b = ['x', 'y'];

@@ -1,7 +1,9 @@
 /**
  * Function.prototype.bind()
  *
- * Polyfill implementation below
+ * The bind function actually returns a new function, with the `this` value of the new function set to what you provide as the argument.
+ *
+ * Polyfill implementation below (for < IE9)
  *
  * @Reference:
  * https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/
@@ -63,6 +65,10 @@ var myObj = {
     }.bind(this));
   }
 };
+
+// Note:
+// One important thing to remember is that if you use bind on a prototype method, it creates an instance-level method,
+// which bypasses the advantages of having methods on the prototype. It’s not wrong, just something to be aware of.
 
 // Use Cases
 //

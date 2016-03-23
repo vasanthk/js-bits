@@ -9,6 +9,9 @@
  * https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/
  * http://stackoverflow.com/a/10115970/1672655
  * http://ejohn.org/apps/learn/#86
+ *
+ * Complex Scenario with promises:
+ * http://adgllorente.com/2016/03/to-bind-or-not-to-bind/
  */
 
 // Polyfill for bind()

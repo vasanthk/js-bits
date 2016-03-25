@@ -4,6 +4,8 @@
  * @Reference:
  * https://gist.github.com/getify/d0cdddfa4673657a9941
  * https://gist.github.com/getify/5572383
+ * https://gist.github.com/getify/9895188
+ * https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/ch6.md
  */
 
 // CONSTRUCTOR SYNTAX VS OLOO
@@ -32,11 +34,9 @@ var x = Object.create(BarObj);
 console.log(x.y + x.z);  // 42
 
 
-
-
-
-
-// CLASS SYNTAX VS OLOO
+/**
+ * CLASS SYNTAX VS OLOO
+ */
 // ES6 Class style
 class Foo {
   constructor(x, y, z) {

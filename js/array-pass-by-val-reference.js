@@ -22,9 +22,42 @@ alert(a);	// will output the new a - [3, 'my new post', {345}, 4]
 // Basically, the slice() operation clones the array and returns the reference to the new array. Also note that:
 // - For object references (and not the actual object), slice copies object references into the new array.
 //   Both the original and new array refer to the same object. If a referenced object changes, the changes are visible to both the new and original arrays.
+//   explain:
+!function() {
+
+	// object
+	var obj = {"abc": 456};
+	var arr = [obj].slice(); // [{"abc": 456}]
+	obj.abc = 4567;
+	console.log(arr, obj); // [{"abc": 4567}] {"abc": 4567}
+
+	// array
+	var oldarr = [456];
+	var arr = [oldarr].slice(); // [[456]]
+	oldarr[0] = 4567;
+	console.log(arr, oldarr); // [[4567]] [4567]
+
+}()
+
 // - For strings and numbers, slice copies strings and numbers into the new array.
 //   Changes to the string or number in one array does not affect the other array.
-//
+//   explain:
+!function() {
+
+	// string in array
+	var oldarr = ['abc'];
+	var arr = oldarr.slice(); // ['abc']
+	oldarr[0] = 'abcd';
+	console.log(arr, oldarr); // ['abc'] ['abcd']
+
+	// number in array
+	var oldarr = [123, 456, 789];
+	var arr = oldarr.slice(0, 2); // [123, 456]
+	oldarr[1] = 123456789;
+	console.log(arr, oldarr); // [123, 456] [123, 123456789, 789]
+
+}()
+
 var a = [3, 'my new post', {345}];
 
 function renderData(a) {

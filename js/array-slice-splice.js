@@ -44,11 +44,11 @@ console.log(array3.splice(2, 1, "Hello", "World"));
 console.log(array3);
 // shows [11, 12, "Hello", "World", 14, 15]
 
-//           -5 -4 -3 -2 -1
-//            |  |  |  |  |
+//            -6  -5 -4 -3 -2 -1
+//             |   |  |  |  |  |
 var array4 = [16, 17, 18, 19, 20];
-//            |  |  |  |  |
-//            0  1  2  3  4
+//             |  |  |  |  |   |
+//             0  1  2  3  4   5
 
 console.log(array4.splice(-2, 1, "me"));
 // shows  [19]

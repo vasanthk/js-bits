@@ -125,3 +125,85 @@ var sum = function (a, b) {
 
 var add5 = sum.bind(null, 5);
 console.log(add5(10));  // 15
+
+
+// Comparative study of these three methods 
+// bind() vs call() vs apply()
+
+// what is bind ?
+// The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+// what is call ? 
+// The call() method calls a function with a given this value and arguments provided individually.
+// what is apply ?
+// The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object).
+// 
+// first , We usually compare call with apply at the same time , why ?
+// Syntax( call ):
+// fun.call(thisArg[, arg1[, arg2[, ...]]])
+// Syntax( apply ):
+// fun.apply(thisArg, [argsArray])
+// 
+// =============
+// 
+// same point: this.Arg , iif the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed.
+// difference: other args. call use many arg for the object , apply() use an array or an array-like
+// call eg:
+// Area of a circle
+var π = 3.14;
+var s = function(r) {
+  return this.π*r*r;
+}
+
+function pi() {
+  this.π = Math.PI;
+  return this;
+}
+s(1); // 3.14
+s.call(pi(), 1); // 3.141592653589793…
+
+// Sometimes we use it like this
+function toArray() {
+  return [].slice.call(arguments);
+}
+toArray(1, 2, 3);
+
+// apply eg:
+// This method is learned in lodash.
+!function() {
+  function apply(fun, thisArg, args) {
+    var length = args.length;
+    switch() {
+      case 0: return fun.call(thisArg);
+      case 1: return fun.call(thisArg, args[0]);
+      case 2: return fun.call(thisArg, args[0], args[1]);
+      case 3: return fun.call(thisArg, args[0], args[1], args[2]);
+    }
+    return fun.apply(thisArg, args);
+  }
+}()
+
+// second, The previous use of bind is in the jquery
+// $(document).bind('click', function() {
+//    console.log(document.title);
+// })
+// 
+
+// but this bind is Function.prototype.bind();
+// Partial Functions (分离函数)
+!function() {
+  function list() {
+    return Array.prototype.slice.call(arguments);
+  }
+
+  var list1 = list(1, 2, 3); // [1, 2, 3]
+
+  // Create a function with a preset leading argument
+  var leadingThirtysevenList = list.bind(undefined, 37);
+
+  var list2 = leadingThirtysevenList(); // [37]
+  var list3 = leadingThirtysevenList(1, 2, 3); // [37, 1, 2, 3]
+}
+
+// @Reference
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind

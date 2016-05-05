@@ -145,7 +145,7 @@ console.log(add5(10));  // 15
 // 
 // =============
 // 
-// same point: this.Arg , iif the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed.
+// same point: this.Arg , if the method is a function in non-strict mode code, null and undefined will be replaced with the global object, and primitive values will be boxed.
 // difference: other args. call use many arg for the object , apply() use an array or an array-like
 // call eg:
 // Area of a circle

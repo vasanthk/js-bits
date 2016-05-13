@@ -14,6 +14,8 @@
  * Links:
  * http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons
  * http://davidwalsh.name/fixing-coercion#isnt-coercion-already-dead
+ * http://bytearcher.com/articles/equality-comparison-operator-javascript/
+ * http://rainsoft.io/the-legend-of-javascript-equality-operator/
  */
 
 // Coercion in JS

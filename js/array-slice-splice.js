@@ -11,7 +11,7 @@
  * Argument 3…n: Optional. The new item(s) to be added to the array.
  *
  * 4. The slice() method can take 2 arguments:
- * Argument 1: Required. An integer that specifies where to start the selection (The first element has an index of 0). Use negative numbers to select from the end of an array.
+ * Argument 1: Required. An integer that specifies where to start the selection (The first element has an index of 0). Use negative numbers to select from the end of an array. If this is undefined, slice begins from index 0
  * Argument 2: Optional. An integer that specifies where to end the selection. If omitted, all elements from the start position and to the end of the array will be selected. Use negative numbers to select from the end of an array.
  *
  * @Reference:
@@ -149,3 +149,13 @@ console.log(array4.slice(2, 23));
 
 console.log(array4);
 // shows [16,17,18,19,20]
+
+// If begin is undefined slice starts from 0
+var array5 = [21, 22, 23, 24, 25];
+console.log(array5.slice(undefined, 2));
+// shows [21, 22]
+
+//slice can be used to copy an array by ommiting both begin and end
+var array6 = array5.slice();
+console.log(array6);
+//shows [21, 22, 23, 24, 25]

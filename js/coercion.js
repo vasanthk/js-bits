@@ -16,6 +16,7 @@
  * http://davidwalsh.name/fixing-coercion#isnt-coercion-already-dead
  * http://bytearcher.com/articles/equality-comparison-operator-javascript/
  * http://rainsoft.io/the-legend-of-javascript-equality-operator/
+ * http://bytearcher.com/articles/equality-comparison-operator-javascript/
  */
 
 // Coercion in JS

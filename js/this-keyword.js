@@ -8,7 +8,14 @@
  * http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
  * http://www.sitepoint.com/mastering-javascripts-this-keyword/
  * http://www.quirksmode.org/js/this.html
+ * https://javascriptweblog.wordpress.com/2010/08/30/understanding-javascripts-this/
+ *
+ * Avoiding `this` keyword
  * https://luizfar.wordpress.com/2012/04/28/dont-use-this-in-javascript/
+ * http://stackoverflow.com/questions/31891931/why-does-jslint-forbid-the-this-keyword
+ * http://stackoverflow.com/questions/28525393/how-can-i-get-rid-of-the-this-keyword-in-local-functions
+ * http://stackoverflow.com/questions/30125464/how-to-avoid-the-this-and-new-keywords-in-javascript
+ * 
  */
 
 // 1. Global this

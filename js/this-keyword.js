@@ -8,6 +8,7 @@
  * http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/
  * http://www.sitepoint.com/mastering-javascripts-this-keyword/
  * http://www.quirksmode.org/js/this.html
+ * https://luizfar.wordpress.com/2012/04/28/dont-use-this-in-javascript/
  */
 
 // 1. Global this

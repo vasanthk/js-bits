@@ -9,6 +9,7 @@
  * http://www.sitepoint.com/mastering-javascripts-this-keyword/
  * http://www.quirksmode.org/js/this.html
  * https://javascriptweblog.wordpress.com/2010/08/30/understanding-javascripts-this/
+ * https://www.codementor.io/javascript/tutorial/understanding--this--in-javascript
  *
  * Avoiding `this` keyword
  * https://luizfar.wordpress.com/2012/04/28/dont-use-this-in-javascript/

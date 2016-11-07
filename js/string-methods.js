@@ -6,6 +6,7 @@
  * http://techiejs.com/Blog/Post/Essential-JavaScript-String-Functions
  * https://rapd.wordpress.com/2007/07/12/javascript-substr-vs-substring/
  * http://www.bennadel.com/blog/2159-using-slice-substring-and-substr-in-javascript.htm
+ * Quirks Mode:http://www.quirksmode.org/js/strings.html
  *
  */
 

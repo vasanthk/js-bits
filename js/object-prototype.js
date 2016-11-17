@@ -53,6 +53,7 @@
  * http://sporto.github.io/blog/2013/02/22/a-plain-english-guide-to-javascript-prototypes/
  * https://davidwalsh.name/javascript-objects
  * http://stackoverflow.com/a/32740085/1672655
+ * https://community.risingstack.com/javascript-prototype-chain-inheritance/
  */
 
 // There are two main ways to set obj.__proto__:

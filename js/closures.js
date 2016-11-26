@@ -15,6 +15,7 @@
  * https://medium.com/written-in-code/practical-uses-for-closures-c65640ae7304#.ukk9dpjxs
  * https://medium.com/@nickbalestra/javascripts-lexical-scope-hoisting-and-closures-without-mystery-c2324681d4be#.bg7fk0chp
  * https://www.safaribooksonline.com/library/view/javascript-the-good/9780596517748/ch04s15.html
+ * https://community.risingstack.com/explaining-javascript-closure-scope-chain-examples/
  */
 
 // EXAMPLE 1

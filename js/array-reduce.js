@@ -14,6 +14,7 @@
  * http://engineering.wix.com/2015/04/21/javascript-the-extra-good-parts/
  * http://danmartensen.svbtle.com/javascripts-map-reduce-and-filter
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+ * https://medium.freecodecamp.com/reduce-f47a7da511a9
  */
 
 // Using forEach()

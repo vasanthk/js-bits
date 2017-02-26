@@ -35,7 +35,7 @@
     })(i);
   }
 
-  // Note: When the IIFE is inside the setTimeout, it prints the corrct values.
+  // Note: When the IIFE is inside the setTimeout, it prints the correct values.
   // However, the values are printed immediately and not after the timout value.
   // Essentially rendering the setTimeout useless.
   // setTimeout() needs a fn as it's 1st parameter.

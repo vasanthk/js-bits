@@ -1,4 +1,5 @@
-#JS Bits
+# JS Bits
+
 JavaScript concepts explained with code.
 
 Community contributions welcome :)

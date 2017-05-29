@@ -3,6 +3,7 @@
  *
  * @Reference:
  * http://javascript.info/tutorial/bubbling-and-capturing
+ * https://www.sitepoint.com/event-bubbling-javascript/
  * http://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
  * http://javascript.info/tutorial/mouse-events
  *

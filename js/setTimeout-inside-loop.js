@@ -74,3 +74,24 @@
     }, 1000);
   }
 })();
+
+//use call/bind method(1)
+for(var i=0;i<5;i++){
+    setTimeout(console.log.bind(null,i),1000);
+}
+//use call/bind method(2)
+for(var i=0;i<5;i++){
+    setTimeout(function(index){
+      console.log(index);
+    }.bind(null,i),1000);
+}
+//use call/bind method(3)
+for(var i=0;i<10;i++){
+    setTimeout(function(index){
+      return function(){ 
+        console.log(index); 
+      }
+    }.call(null,i),1000);
+}
+
+

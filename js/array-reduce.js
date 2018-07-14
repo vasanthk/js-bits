@@ -84,5 +84,19 @@ function inrArrToObj(arr){
 inrArrToObj(arr);
 // [{'a':1},{'b':2}]
 
+/* use reduce to change inner array to object*/
+ let arr = [
+       ['a', 1],
+       ['b', 2]
+  ]; 
+function inrArrToObj(arr){
+    const result = arr.reduce(function(prev,curr){
+      prev[curr[0]] = curr[1];
+      return prev;
+  },{});
+   return result;
+ };
 
+ inrArrToObj(arr);
+// output: {a:1,b:2}
 

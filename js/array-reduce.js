@@ -39,3 +39,64 @@
   // reduce() format: arr.reduce(callback()[, initialValue])
   // callback format: fn(previousValue, currentValue, index, array)
 })();
+
+
+/* Understand reduce
+ *  Array.prototype.reduce(function(prev,curr,index,arr){    
+ *       return result;
+ *  },initprev);  
+ *
+ *  reduce(func,initprev), actually accept 4 params in first function: prev: previous, curr: current, index: current index, arr: original array
+ *  reduce(func,initprev), initprev: set a default value as prev, if there is ot initprev, index will be started from 1, prev = arr[0] 
+ *
+ *
+ *  Example without initprev,loop times: (arr.length -1) 
+ *  [1,2,3].reduce(function(pre,curr,index,arr){
+ *   console.log("pre:"+pre +"  curr:" + curr + " index:"+ index +" arr:" +arr);
+ *    return curr;
+ *  });
+ *   output:  pre:1  curr:2 index:1 arr:1,2,3; pre:2  curr:3 index:2 arr:1,2,3;
+ *
+  *  Example with initprev, loop times: arr.length 
+ *  [1,2,3].reduce(function(pre,curr,index,arr){
+ *   console.log("pre:"+pre +"  curr:" + curr + " index:"+ index +" arr:" +arr);
+ *    return curr;
+ *  },4);
+ *   output:  pre:4  curr:1 index:0 arr:1,2,3;  pre:1  curr:2 index:1 arr:1,2,3; pre:2  curr:3 index:2 arr:1,2,3;
+ *
+*/
+
+/* use reduce to change inner array to object*/
+ let arr = [
+      ['a', 1],
+      ['b', 2]
+  ]; 
+function inrArrToObj(arr){
+    const result = arr.reduce(function(prev,curr){
+     const obj = {
+      [curr[0]]:curr[1]
+     }
+     prev.push(obj);
+    return  prev;
+  },[]);
+   return result;
+ }
+inrArrToObj(arr);
+// [{'a':1},{'b':2}]
+
+/* use reduce to change inner array to object*/
+ let arr = [
+       ['a', 1],
+       ['b', 2]
+  ]; 
+function inrArrToObj(arr){
+    const result = arr.reduce(function(prev,curr){
+      prev[curr[0]] = curr[1];
+      return prev;
+  },{});
+   return result;
+ };
+
+ inrArrToObj(arr);
+// output: {a:1,b:2}
+

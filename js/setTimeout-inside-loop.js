@@ -75,6 +75,12 @@
   }
 })();
 
+//use call/bind method(1)
+for(var i=0;i<5;i++){
+    setTimeout(console.log.bind(null,i),1000);
+}
+//use call/bind method(2)
+for(var i=0;i<5;i++){
 //use bind/call to achieve this function, method(1)
 for(var i=0;i<10;i++){
     setTimeout(console.log.bind(null,i),1000);
@@ -85,6 +91,7 @@ for(var i=0;i<10;i++){
       console.log(index);
     }.bind(null,i),1000);
 }
+//use call/bind method(3)
 //use bind/call to achieve this function, method(3)
 for(var i=0;i<10;i++){
     setTimeout(function(index){
@@ -93,4 +100,3 @@ for(var i=0;i<10;i++){
       }
     }.call(null,i),1000);
 }
-
